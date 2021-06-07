@@ -14,15 +14,13 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Stack,
-  Checkbox,
   Button,
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react';
 
 import { useLoginpageSlice } from './slice';
-import { selectUsername } from './slice/selectors';
+// import { selectUsername } from './slice/selectors';
 
 interface Props {}
 
