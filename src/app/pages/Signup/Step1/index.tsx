@@ -35,81 +35,91 @@ export const Step1 = memo((props: Props) => {
     <Div>
       {t('')}
       {/*  {t(...messages.someThing())}  */}
-      <div className="row justify-content-center ">
-        <div className="col-sm-5 col-md-6 col-lg-5 col-xl-4  m-3 ">
-          <Title title="Create an account" />
+      <Flex
+        flexDirection="column"
+        width="100wh"
+        minHeight="100vh"
+        justifyContent="center"
+        alignItems="center"
+        marginTop={['1em', '0em']}
+      >
+        <Title title="Create an account" />
 
-          <Box
-            boxShadow={{
-              sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
-            }}
-            borderRadius="4px"
-            marginTop="2em"
+        <Box
+          boxShadow={{
+            sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
+          }}
+          borderRadius="4px"
+          marginTop="2em"
+          width={['fit-content', '410px']}
+          className="m-auto"
+          p={["1em","0em"]}
+        >
+          <Stack
+            spacing={4}
+            padding={{ sm: '1em', md: '3em' }}
+            backgroundColor="whiteAlpha.900"
           >
-            <Stack
-              spacing={4}
-              padding={{ sm: '1em', md: '3em' }}
-              backgroundColor="whiteAlpha.900"
-            >
-              <Flex>
-                <InputGroup mr="2em">
-                  <InputFiled text="text" label="First name" />
-                </InputGroup>
-                <InputGroup>
-                  <InputFiled text="text" label="Last name" />
-                </InputGroup>
-              </Flex>
+            <Flex>
+              <InputGroup mr="2em">
+                <InputFiled text="text" label="First name" />
+              </InputGroup>
+              <InputGroup>
+                <InputFiled text="text" label="Last name" />
+              </InputGroup>
+            </Flex>
 
-              <InputFiled text="text" label="Email or Username" />
-              <FormControl>
-                <InputFiled
-                  text={show ? 'text' : 'password'}
-                  label="Password"
-                />
-                <InputRightElement height="6em">
-                  <Button h="1.75rem" size="sm" onClick={handleClick} p="1.5em">
-                    {show ? 'Hide' : 'Show'}
-                  </Button>
-                </InputRightElement>
-                <Text
-                  fontSize="xs"
-                  color="gray.300"
-                  mt="2em"
-                  fontFamily="sans-serif"
-                  fontWeight="bold"
+            <InputFiled text="text" label="Email or Username" />
+            <FormControl className="mb-5">
+              <InputFiled text={show ? 'text' : 'password'} label="Password" />
+              <InputRightElement height="6em">
+                <Button h="1.75rem" size="sm" onClick={handleClick} p="1.5em">
+                  {show ? 'Hide' : 'Show'}
+                </Button>
+              </InputRightElement>
+              <Text
+                fontSize="xs"
+                color="gray.300"
+                mt="2em"
+                fontFamily="sans-serif"
+                fontWeight="bold"
+              >
+                Whats your purpose here?
+              </Text>
+              <Flex marginTop="2em">
+                <Radio
+                  size="lg"
+                  name="1"
+                  colorScheme="blue"
+                  pr={["1em","2em"]}
+                  defaultChecked
                 >
-                  Whats your purpose here?
-                </Text>
-                <Flex marginTop="2em">
-                  <Radio
-                    size="lg"
-                    name="1"
-                    colorScheme="blue"
-                    pr="2em"
-                    defaultChecked
-                  >
-                    Reading
-                  </Radio>
+                  Reading
+                </Radio>
 
-                  <Radio size="lg" name="1" colorScheme="blue" pr="2em">
-                    Writing reports
-                  </Radio>
-                </Flex>
-              </FormControl>
-              <PageButton label="Next" color="#20cdbb" fontcolor="white" />
-            </Stack>
-          </Box>
-
-          <Stack mt="1em" textAlign="center">
-            <Text color="gray.300">
-              Already have an account?{' '}
-              <Link color="#51a8d1" fontWeight="700">
-                Log In
-              </Link>
-            </Text>
+                <Radio size="lg" name="1" colorScheme="blue" pr={["1em","2em"]}>
+                  Writing reports
+                </Radio>
+              </Flex>
+            </FormControl>
+            <PageButton
+              label="Next"
+              color="#20cdbb"
+              fontcolor="white"
+              size="10em"
+            />
           </Stack>
-        </div>
-      </div>
+        </Box>
+
+        <Stack mt="1em" textAlign="center">
+          <Text color="gray.300">
+            Already have an account?{' '}
+            <Link color="#51a8d1" fontWeight="700">
+              Log In
+            </Link>
+          </Text>
+        </Stack>
+      </Flex>
     </Div>
   );
 });

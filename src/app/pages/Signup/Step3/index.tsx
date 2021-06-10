@@ -7,7 +7,7 @@ import React, { memo, useState } from 'react';
 import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
 import { messages } from './messages';
-import { Stack, Text, Box } from '@chakra-ui/react';
+import { Stack, Text, Box,Flex } from '@chakra-ui/react';
 import { PageButton } from '../../../components/PageButton/index';
 import { Title } from '../../../components/Title/index';
 import { TextFiled } from '../../../components/TextFiled/index';
@@ -22,16 +22,26 @@ export const Step3 = memo((props: Props) => {
     <Div style={{ overflowX: 'hidden' }}>
       {t('')}
       {/*  {t(...messages.someThing())}  */}
-      <div className="row justify-content-center ">
-        <div className="col-12 m-3 ">
+      <Flex
+        flexDirection="column"
+        width="100wh"
+        height={['100vh']}
+        justifyContent="center"
+        alignItems="center"
+        marginTop={['1em', '1em']}
+      >
+    
           <Title title="Your experience…" />
-        </div>
-        <div className="col-sm-5 col-md-6 col-lg-6 col-xl-4  m-3 ">
+        
           <Box
             boxShadow={{
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
             borderRadius="4px"
+            width={['fit-content', '410px']}
+            className="m-auto"
+            pb="2em"
+            p={['1em', '0em']}
           >
             <Stack
               spacing={4}
@@ -77,11 +87,15 @@ export const Step3 = memo((props: Props) => {
                 <b> + Add more</b>
               </button>
 
-              <PageButton label="Next" color="#20cdbb" fontcolor="white" />
+              <PageButton
+                label="Next"
+                color="#20cdbb"
+                fontcolor="white"
+                size="10em"
+              />
             </Stack>
           </Box>
-        </div>
-      </div>
+  </Flex>
     </Div>
   );
 });
