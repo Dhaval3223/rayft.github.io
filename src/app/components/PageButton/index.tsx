@@ -12,23 +12,23 @@ interface Props {
   label: string;
   color: any;
   fontcolor: any;
+  size:any
 }
 
 export function PageButton(props: Props) {
-  const { label, color, fontcolor } = props;
+  const { label, color, fontcolor,size } = props;
   return (
     <Div>
       <VStack divider={<StackDivider />} spacing={2} align="stretch">
         <Button
           bg={color}
-          p="1.2em"
+          p="1.5em"
           color={fontcolor}
           borderRadius="22.5px"
-          minW="10em"
+          minW={size}
           fontWeight="700"
-          mt="1.5em"
           _hover={{ background: { color } }}
-          fontSize="1.3em"
+          fontSize="1em"
           letterSpacing="1px"
         >
           {label}

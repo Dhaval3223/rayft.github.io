@@ -58,6 +58,7 @@ export const PaymentSuccess = memo((props: Props) => {
                 label="Go to wallet"
                 color="#20cdbb"
                 fontcolor="white"
+                size="10em"
               />
               <Link fontSize="1em" color="#20cdbb ">
                 <b>Start reading</b>

@@ -56,7 +56,12 @@ export const PaymentError = memo((props: Props) => {
                 days.
               </Text>
 
-              <PageButton label="Try again" color="#20cdbb" fontcolor="white" />
+              <PageButton
+                label="Try again"
+                color="#20cdbb"
+                fontcolor="white"
+                size="10em"
+              />
               <Link fontSize="1em" color="#20cdbb ">
                 <b>Go to wallet</b>
               </Link>

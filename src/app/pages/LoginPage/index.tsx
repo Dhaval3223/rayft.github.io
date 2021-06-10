@@ -15,6 +15,7 @@ import {
   Box,
   Link,
   FormControl,
+  Flex,
 } from '@chakra-ui/react';
 import { PageButton } from '../../components/PageButton/index';
 import { Title } from '../../components/Title/index';
@@ -33,8 +34,15 @@ export const LoginPage = memo((props: Props) => {
     <Div>
       {t('')}
 
-      <div className="row justify-content-center ">
-        <div className="col-sm-5 col-md-6 col-lg-4  m-3 ">
+      <Flex
+        flexDirection="column"
+        width="100wh"
+        height={['80vh', '100vh']}
+        justifyContent="center"
+        alignItems="center"
+        // marginTop={{sm:'3em',md:'0',lg:'0'}}
+      >
+        <Stack>
           <Title title="Let’s get started" />
 
           <Box
@@ -42,6 +50,8 @@ export const LoginPage = memo((props: Props) => {
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
             borderRadius="4px"
+            width={['300px','410px']}
+            m="auto"
           >
             <Stack
               spacing={4}
@@ -49,7 +59,7 @@ export const LoginPage = memo((props: Props) => {
               backgroundColor="whiteAlpha.900"
             >
               <InputFiled text="text" label="Email or Username" />
-              <FormControl>
+              <FormControl className="mb-5">
                 <InputFiled
                   text={show ? 'text' : 'password'}
                   label="PassWord"
@@ -60,14 +70,19 @@ export const LoginPage = memo((props: Props) => {
                   </Button>
                 </InputRightElement>
               </FormControl>
-              <PageButton label="Login in" color="#20cdbb" fontcolor="white" />
+              <PageButton
+                label="Login in"
+                color="#20cdbb"
+                fontcolor="white"
+                size="10em"
+              />
               <Link textAlign="center" color="#51a8d1" p="1em 0em 0.8em 0em">
                 Forgot password?
               </Link>
             </Stack>
           </Box>
-        </div>
-      </div>
+        </Stack>
+      </Flex>
 
       <Stack m="1em 0em 0em 0em">
         <Text color="gray.300" className="text-center">
