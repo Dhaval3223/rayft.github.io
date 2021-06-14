@@ -21,8 +21,8 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 
-import { useLoginpageSlice } from './slice';
-import { selectUsername } from './slice/selectors';
+// import { useLoginpageSlice } from './slice';
+// import { selectUsername } from './slice/selectors';
 
 interface Props {}
 
