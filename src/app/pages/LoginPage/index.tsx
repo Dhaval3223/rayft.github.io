@@ -3,7 +3,7 @@
  * LoginPage
  *
  */
-import React, { memo } from 'react';
+import React, { useState, memo } from 'react';
 import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
 import { InputFiled } from '../../components/InputFiled/index';
@@ -19,9 +19,15 @@ import {
 } from '@chakra-ui/react';
 import { PageButton } from '../../components/PageButton/index';
 import { Title } from '../../components/Title/index';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-interface Props {}
+import axios from 'axios';
+
+interface Props {
+  id: number;
+  user_name: string;
+  body: string;
+  title: string;
+}
 
 export const LoginPage = memo((props: Props) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -29,11 +35,23 @@ export const LoginPage = memo((props: Props) => {
 
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
+  const [posts, setPosts] = useState<Props[]>([]);
+  // React.useEffect(() => {
+  //   axios
+  //     .get('https://private-7957dd-rayft2.apiary-mock.com/users')
+  //     .then(res => {
+  //       // let arr = JSON.stringify(res);
+  //       console.log(res.data[21]);
+  //       alert(res);
+  //       setPosts(res.data);
+  //       console.log(posts);
+  //     });
+  // }, []);
 
   return (
     <Div>
       {t('')}
-
+      {/* <ul>{posts.map(post => (<li >{post.user_name}</li>))}</ul> */}
       <Flex
         flexDirection="column"
         width="100wh"
@@ -50,7 +68,7 @@ export const LoginPage = memo((props: Props) => {
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
             borderRadius="4px"
-            width={['300px','410px']}
+            width={['300px', '410px']}
             m="auto"
           >
             <Stack

@@ -6,7 +6,7 @@
 import * as React from 'react';
 import styled from 'styled-components/macro';
 import { Button, VStack, StackDivider } from '@chakra-ui/react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 interface Props {
   label: string;

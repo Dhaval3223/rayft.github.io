@@ -15,6 +15,7 @@ interface Props {}
 export const LandingPage = memo((props: Props) => {
   return (
     <Div>
+      
       <Flex
         flexDirection="column"
         width="100wh"
