@@ -14,20 +14,20 @@ export function Header(props: Props) {
       <Box bg="#183380" height="44px">
         <Flex>
           <Center m={2}>
-            <Box display={['block', 'none', 'none', 'none', 'none', 'none']}>
+            <Box display={['block', 'block', 'block', 'none', 'none', 'none']}>
               <BurgerMenu />
             </Box>
           </Center>
           <Center>
-            <Box margin="0 21.1px 0 80px" display={['none', 'block']}>
+            <Box margin="0 21.1px 0 80px" display={['none', 'none','none','block']}>
               <MainLogo />
             </Box>
           </Center>
-          <Box mt={1.5} display={['none', 'block']}>
+          <Box mt={1.5} display={['none', 'none','none','block']}>
             <Inputsearch />
           </Box>
           <Spacer />
-          <Box display={['none', 'block']} mr="84px">
+          <Box display={['none', 'none','none','block']} mr="84px">
             <IconsPanel />
           </Box>
         </Flex>

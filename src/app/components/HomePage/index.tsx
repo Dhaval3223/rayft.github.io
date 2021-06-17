@@ -11,7 +11,7 @@ import HomePageCardImage from './HomePageCardImage';
 import HomePageCardText from './HomePageCardText';
 import Header from './Header';
 
-export function HomePage()
+export function Home()
 {
     return(
     <>
