@@ -20,7 +20,6 @@ import {
 import { PageButton } from '../../components/PageButton/index';
 import { Title } from '../../components/Title/index';
 
-import axios from 'axios';
 
 interface Props {
   id: number;

@@ -10,11 +10,7 @@ export interface Iprops
 const ProfileButton = (props:Iprops) =>
 {
     return(        
-<<<<<<< HEAD
-        <Button variant={props.variant} mx="1" borderRadius="full">{props.label}</Button>
-=======
         <Button variant={props.variant} mx="2">{props.label}</Button>
->>>>>>> feature/wallet
     )
 }
 

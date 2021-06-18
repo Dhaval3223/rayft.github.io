@@ -14,11 +14,6 @@ import { GlobalStyle } from 'styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
-<<<<<<< HEAD
-// import { Login } from './pages/Login/Loadable';
-=======
-import { LoginPage } from './pages/LoginPage/index';
->>>>>>> feature/wallet
 import { useTranslation } from 'react-i18next';
 import { Transactions } from './pages/Wallte/Transactions/index';
 import { Step1 } from './pages/Signup/Step1/index';
@@ -55,17 +50,6 @@ export function App() {
       </div>
       <Switch>
         <Route exact path="/" component={HomePage} />
-<<<<<<< HEAD
-=======
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/All_Transactions" component={Transactions} />
-        <Route exact path="/Sign_up/Step_1" component={Step1} />
-        <Route exact path="/Sign_up/Step_2" component={Step2} />
-        <Route exact path="/Sign_up/Step_3" component={Step3} />
-        <Route exact path="/Sign_up/Step_2/R" component={Step_2} />
-        <Route exact path="/LandingPage" component={LandingPage} />
-        <Route exact path="/Sign_up/Step_4" component={Step4} />
->>>>>>> feature/wallet
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
