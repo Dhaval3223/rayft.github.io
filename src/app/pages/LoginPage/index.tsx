@@ -3,6 +3,7 @@
  * LoginPage
  *
  */
+ import {NavLink} from 'react-router-dom';
 import React, { useState, memo } from 'react';
 import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +20,7 @@ import {
 } from '@chakra-ui/react';
 import { PageButton } from '../../components/PageButton/index';
 import { Title } from '../../components/Title/index';
+import {FormsHeader} from '../../components/FormsHeader/index';
 
 
 interface Props {
@@ -48,13 +50,15 @@ export const LoginPage = memo((props: Props) => {
   // }, []);
 
   return (
+    <>
+    <FormsHeader name="Log-in"/>
     <Div>
       {t('')}
       {/* <ul>{posts.map(post => (<li >{post.user_name}</li>))}</ul> */}
       <Flex
         flexDirection="column"
         width="100wh"
-        height={['80vh', '100vh']}
+        
         justifyContent="center"
         alignItems="center"
         // marginTop={{sm:'3em',md:'0',lg:'0'}}
@@ -88,7 +92,8 @@ export const LoginPage = memo((props: Props) => {
                 </InputRightElement>
               </FormControl>
               <PageButton
-                label="Login in"
+                to="/loginpage"
+                label="Log in"
                 color="#20cdbb"
                 fontcolor="white"
                 size="10em"
@@ -101,17 +106,20 @@ export const LoginPage = memo((props: Props) => {
         </Stack>
       </Flex>
 
-      <Stack m="1em 0em 0em 0em">
-        <Text color="gray.300" className="text-center">
+      <Stack mt="1em" textAlign="center">
+          <Text color="gray.300">
           Don’t have an account yet?{' '}
-          <Link color="#51a8d1" fontWeight="700">
-            Sign Up
-          </Link>
-        </Text>
-      </Stack>
+            <Link color="#51a8d1" fontWeight="700">
+              <NavLink to="/Sign_up/Step_1">
+              Sign Up
+              </NavLink>
+            </Link>
+          </Text>
+        </Stack>
 
       {/*  {t(...messages.someThing())}  */}
     </Div>
+    </>
   );
 });
 

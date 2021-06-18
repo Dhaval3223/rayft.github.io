@@ -8,6 +8,7 @@ import styled from 'styled-components/macro';
 import { Stack, Box, Flex, Button, Grid, Text } from '@chakra-ui/react';
 import { PageButton } from '../../../../components/PageButton/index';
 import { Title } from '../../../../components/Title/index';
+import {NavLink} from 'react-router-dom';
 
 interface Props {}
 
@@ -83,12 +84,15 @@ export const Step_2 = memo((props: Props) => {
                   color="#20cdbb"
                   fontcolor="white"
                   size="10em"
+                  to="/Sign_up/Step_3"
                 />
               </Stack>
             </Stack>
           </Box>
           <Text color="gray.300" textAlign="center">
+            <NavLink to="/homepage">
             Skip this step
+            </NavLink>
           </Text>
         </Stack>
       </Flex>

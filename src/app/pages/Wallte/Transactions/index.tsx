@@ -48,6 +48,7 @@ export const Transactions = memo((props: Props) => {
                     fontcolor="white"
                     label="Add money"
                     size="10em"
+                    to=""
                   />
                 </div>
               </div>

@@ -3,24 +3,27 @@
  * PageButton
  *
  */
+ import { useHistory } from 'react-router-dom';
 import * as React from 'react';
 import styled from 'styled-components/macro';
-import { Button, VStack, StackDivider } from '@chakra-ui/react';
+import { Button, VStack, StackDivider,Link } from '@chakra-ui/react';
 
 
 interface Props {
   label: string;
   color: any;
   fontcolor: any;
-  size:any
+  size:any,
+  to:string
 }
 
 export function PageButton(props: Props) {
-  const { label, color, fontcolor,size } = props;
+  const {push} = useHistory();
+  const { label, color, fontcolor,size , to} = props;
   return (
     <Div>
       <VStack divider={<StackDivider />} spacing={2} align="stretch">
-        <Button
+              <Button
           bg={color}
           p="1.5em"
           color={fontcolor}
@@ -30,6 +33,7 @@ export function PageButton(props: Props) {
           _hover={{ background: { color } }}
           fontSize="1em"
           letterSpacing="1px"
+          onClick={()=> push(to)}
         >
           {label}
         </Button>

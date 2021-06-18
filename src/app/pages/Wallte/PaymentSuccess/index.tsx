@@ -59,6 +59,7 @@ export const PaymentSuccess = memo((props: Props) => {
                 color="#20cdbb"
                 fontcolor="white"
                 size="10em"
+                to=""
               />
               <Link fontSize="1em" color="#20cdbb ">
                 <b>Start reading</b>

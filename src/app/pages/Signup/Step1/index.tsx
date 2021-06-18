@@ -3,6 +3,7 @@
  * Step1
  *
  */
+import {NavLink} from 'react-router-dom';
 import React, { memo } from 'react';
 import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
@@ -107,6 +108,7 @@ export const Step1 = memo((props: Props) => {
               color="#20cdbb"
               fontcolor="white"
               size="10em"
+              to="/Sign_up/Step_1"
             />
           </Stack>
         </Box>
@@ -115,7 +117,9 @@ export const Step1 = memo((props: Props) => {
           <Text color="gray.300">
             Already have an account?{' '}
             <Link color="#51a8d1" fontWeight="700">
+              <NavLink to="/loginpage">
               Log In
+              </NavLink>
             </Link>
           </Text>
         </Stack>

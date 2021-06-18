@@ -85,6 +85,7 @@ export const Step2 = memo((props: Props) => {
                 color="#20cdbb"
                 fontcolor="white"
                 size="10em"
+                to="/Sign_up/Step_2"
               />
             </Stack>
           </Box>

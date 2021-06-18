@@ -26,13 +26,9 @@ import { initialState } from './components/slice/index';
 import { RootState } from '../types/index';
 // import { decrement, increment, incrementByAmount } from "./components/slice/index";
 import { useCounterSlice } from './components/slice/index';
+import {LoginPage} from './pages/LoginPage/Loadable';
 
 export function App() {
-  const { counter } = useSelector(
-    (state: RootState) => state?.counter || initialState,
-  );
-  const { actions } = useCounterSlice();
-  const dispatch = useDispatch();
   const { i18n } = useTranslation();
   return (
     <BrowserRouter>
@@ -43,13 +39,16 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-      <div>
-        <h1> The count is: {counter}</h1>
-        <button onClick={() => dispatch(actions.increment())}>increment</button>
-        <button onClick={() => dispatch(actions.decrement())}>decrement</button>
-      </div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/loginpage" component={LoginPage}/>
+        <Route exact path="/All_Transactions" component={Transactions} />
+        <Route exact path="/Sign_up/Step_1" component={Step1} />
+        <Route exact path="/Sign_up/Step_2" component={Step2} />
+        <Route exact path="/Sign_up/Step_3" component={Step3} />
+        <Route exact path="/Sign_up/Step_2/R" component={Step_2} />
+        <Route exact path="/Sign_up/Step_4" component={Step4} />
+        <Route exact path="/homepage" component={HomePage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
