@@ -9,16 +9,13 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import { GlobalStyle } from 'styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
-<<<<<<< HEAD
 // import { Login } from './pages/Login/Loadable';
-=======
 import { LoginPage } from './pages/LoginPage/index';
->>>>>>> feature/wallet
 import { useTranslation } from 'react-i18next';
 import { Transactions } from './pages/Wallte/Transactions/index';
 import { Step1 } from './pages/Signup/Step1/index';
@@ -48,15 +45,13 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-      <div>
+      {/* <div>
         <h1> The count is: {counter}</h1>
         <button onClick={() => dispatch(actions.increment())}>increment</button>
         <button onClick={() => dispatch(actions.decrement())}>decrement</button>
-      </div>
+      </div> */}
       <Switch>
         <Route exact path="/" component={HomePage} />
-<<<<<<< HEAD
-=======
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/All_Transactions" component={Transactions} />
         <Route exact path="/Sign_up/Step_1" component={Step1} />
@@ -65,7 +60,6 @@ export function App() {
         <Route exact path="/Sign_up/Step_2/R" component={Step_2} />
         <Route exact path="/LandingPage" component={LandingPage} />
         <Route exact path="/Sign_up/Step_4" component={Step4} />
->>>>>>> feature/wallet
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

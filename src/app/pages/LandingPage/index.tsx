@@ -5,17 +5,17 @@
  */
 import React, { memo } from 'react';
 import styled from 'styled-components/macro';
-import { Stack, Box, Flex, Divider, Text, Image } from '@chakra-ui/react';
+import { Stack, Box, Flex, Divider, Text, Image, Link } from '@chakra-ui/react';
 import { PageButton } from '../../components/PageButton/index';
 import logo from '../../../img/logo.png';
 import Line from '../../../OR.svg';
+import { LoginPage } from '../LoginPage/index';
 
 interface Props {}
 
 export const LandingPage = memo((props: Props) => {
   return (
     <Div>
-      
       <Flex
         flexDirection="column"
         width="100wh"
@@ -53,12 +53,14 @@ export const LandingPage = memo((props: Props) => {
                 Quality research reports by top sector analysts one click away
               </b>
             </Text>
-            <PageButton
-              color="#20cdbb"
-              fontcolor="white"
-              label="Log In"
-              size={['17em', '19em']}
-            />
+            <Link to="/login">
+              <PageButton
+                color="#20cdbb"
+                fontcolor="white"
+                label="Log In"
+                size={['17em', '19em']}
+              />
+            </Link>
 
             <Stack direction={['row']} mt="5em">
               <Box

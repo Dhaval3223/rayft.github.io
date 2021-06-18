@@ -3,20 +3,22 @@
  * PageButton
  *
  */
+
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { Button, VStack, StackDivider } from '@chakra-ui/react';
-
 
 interface Props {
   label: string;
   color: any;
   fontcolor: any;
-  size:any
+  size: any;
 }
 
 export function PageButton(props: Props) {
-  const { label, color, fontcolor,size } = props;
+  const { label, color, fontcolor, size } = props;
+
   return (
     <Div>
       <VStack divider={<StackDivider />} spacing={2} align="stretch">

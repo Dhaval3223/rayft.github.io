@@ -55,7 +55,8 @@ export const LoginPage = memo((props: Props) => {
       <Flex
         flexDirection="column"
         width="100wh"
-        height={['80vh', '100vh']}
+        minH="100vh"
+        margin="auto"
         justifyContent="center"
         alignItems="center"
         // marginTop={{sm:'3em',md:'0',lg:'0'}}
@@ -99,17 +100,16 @@ export const LoginPage = memo((props: Props) => {
               </Link>
             </Stack>
           </Box>
+          <Stack m="1em 0em 0em 0em">
+            <Text color="gray.300" textAlign="center" mt={['8em', '1em']}>
+              Don’t have an account yet?{' '}
+              <Link color="#51a8d1" fontWeight="700">
+                Sign Up
+              </Link>
+            </Text>
+          </Stack>
         </Stack>
       </Flex>
-
-      <Stack m="1em 0em 0em 0em">
-        <Text color="gray.300" className="text-center">
-          Don’t have an account yet?{' '}
-          <Link color="#51a8d1" fontWeight="700">
-            Sign Up
-          </Link>
-        </Text>
-      </Stack>
 
       {/*  {t(...messages.someThing())}  */}
     </Div>

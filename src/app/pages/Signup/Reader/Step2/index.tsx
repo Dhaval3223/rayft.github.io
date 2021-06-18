@@ -44,7 +44,7 @@ export const Step_2 = memo((props: Props) => {
             boxShadow={{
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
-            width={['300px','716px']}
+            width={['300px', '716px']}
             className="m-auto"
             borderRadius="4px"
             pb="2em"
@@ -62,7 +62,7 @@ export const Step_2 = memo((props: Props) => {
                   'repeat(4, 1fr)',
                 ]}
                 gap={4}
-              justifyItems="center"
+                justifyItems="center"
               >
                 {btns.map(list => (
                   <Button
