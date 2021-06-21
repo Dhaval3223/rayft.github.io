@@ -3,7 +3,7 @@
  * Step1
  *
  */
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React, { memo } from 'react';
 import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
@@ -23,6 +23,7 @@ import {
 } from '@chakra-ui/react';
 import { PageButton } from '../../../components/PageButton/index';
 import { Title } from '../../../components/Title/index';
+import { pushd } from 'shelljs';
 
 interface Props {}
 
@@ -32,6 +33,9 @@ export const Step1 = memo((props: Props) => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
 
+  const submit = () => {
+    pushd('/Sign_up/Step_1');
+  };
   return (
     <Div>
       {t('')}
@@ -54,7 +58,7 @@ export const Step1 = memo((props: Props) => {
           marginTop="2em"
           width={['fit-content', '410px']}
           className="m-auto"
-          p={["1em","0em"]}
+          p={['1em', '0em']}
         >
           <Stack
             spacing={4}
@@ -63,16 +67,26 @@ export const Step1 = memo((props: Props) => {
           >
             <Flex>
               <InputGroup mr="2em">
-                <InputFiled text="text" label="First name" />
+                <InputFiled text="text" label="First name" value="" onchng="" />
               </InputGroup>
               <InputGroup>
-                <InputFiled text="text" label="Last name" />
+                <InputFiled text="text" label="Last name" value="" onchng="" />
               </InputGroup>
             </Flex>
 
-            <InputFiled text="text" label="Email or Username" />
+            <InputFiled
+              text="text"
+              label="Email or Username"
+              value=""
+              onchng=""
+            />
             <FormControl className="mb-5">
-              <InputFiled text={show ? 'text' : 'password'} label="Password" />
+              <InputFiled
+                text={show ? 'text' : 'password'}
+                label="Password"
+                value=""
+                onchng=""
+              />
               <InputRightElement height="6em">
                 <Button h="1.75rem" size="sm" onClick={handleClick} p="1.5em">
                   {show ? 'Hide' : 'Show'}
@@ -92,13 +106,18 @@ export const Step1 = memo((props: Props) => {
                   size="lg"
                   name="1"
                   colorScheme="blue"
-                  pr={["1em","2em"]}
+                  pr={['1em', '2em']}
                   defaultChecked
                 >
                   Reading
                 </Radio>
 
-                <Radio size="lg" name="1" colorScheme="blue" pr={["1em","2em"]}>
+                <Radio
+                  size="lg"
+                  name="1"
+                  colorScheme="blue"
+                  pr={['1em', '2em']}
+                >
                   Writing reports
                 </Radio>
               </Flex>
@@ -108,7 +127,7 @@ export const Step1 = memo((props: Props) => {
               color="#20cdbb"
               fontcolor="white"
               size="10em"
-              to="/Sign_up/Step_1"
+              to={submit}
             />
           </Stack>
         </Box>
@@ -117,9 +136,7 @@ export const Step1 = memo((props: Props) => {
           <Text color="gray.300">
             Already have an account?{' '}
             <Link color="#51a8d1" fontWeight="700">
-              <NavLink to="/loginpage">
-              Log In
-              </NavLink>
+              <NavLink to="/loginpage">Log In</NavLink>
             </Link>
           </Text>
         </Stack>
