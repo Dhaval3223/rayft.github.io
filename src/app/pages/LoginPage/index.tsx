@@ -21,7 +21,10 @@ import {
 import { PageButton } from '../../components/PageButton/index';
 import { Title } from '../../components/Title/index';
 import {FormsHeader} from '../../components/FormsHeader/index';
-
+//import {selectLogin} from '../../pages/LoginPage/slice/selectors';
+import {useDispatch,useSelector} from "react-redux";
+import {RootState} from "../../../types";
+import {validateEmailAddress,initialState,useLoginSlice} from './slice/index';
 
 interface Props {
   id: number;
@@ -49,8 +52,20 @@ export const LoginPage = memo((props: Props) => {
   //     });
   // }, []);
 
+  const { errors } = useSelector((state: RootState) => state?.login || initialState);
+  const {actions} = useLoginSlice();
+  const dispatch = useDispatch();
+  const handleChange = (event) =>
+  {
+    event.preventDefault();
+    dispatch(actions.validateEmailAddress(event.target.value));
+  }
   return (
     <>
+    <form onSubmit={handleChange}></form>
+    <label>{errors.email}</label>
+    <input type="email" onChange={handleChange}/>
+    <button type="submit">Submit</button>
     <FormsHeader name="Log-in"/>
     <Div>
       {t('')}

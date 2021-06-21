@@ -18,10 +18,12 @@ export function Home()
         <Header/>
         <Container>
             <Row>
-                <Col>
+                <Col md="6">
                     <Flex direction="column"
                     rounded={'md'}
                     boxShadow={'md'}
+                    onClick={()=>alert("hello")}
+                    cursor="pointer"
                     >
                 <Box
                     position={'relative'}
@@ -49,7 +51,7 @@ export function Home()
                     </Flex>
                     </Flex>
                 </Col>
-                <Col>
+                <Col md="6">
                 <Flex direction="column"
                     rounded={'md'}
                     boxShadow={'md'}
@@ -80,7 +82,7 @@ export function Home()
                     </Flex>
                     </Flex>
                 </Col>
-                <Col>
+                <Col md="4">
                     <Flex direction="column"
                     rounded={'md'}
                     boxShadow={'md'}
@@ -112,7 +114,7 @@ export function Home()
                     </Flex>
                 </Col>
             </Row>
-        </Container>
+        </Container> 
         </>
     );
 }

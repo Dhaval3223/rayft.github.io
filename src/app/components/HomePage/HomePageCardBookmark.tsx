@@ -1,9 +1,10 @@
-import React from 'react';
+import React , {useState} from 'react';
 import {IconButton} from '@chakra-ui/react';
 import {FaRegBookmark} from 'react-icons/fa';
 
 const HomePageCardBookmark = () =>
 {
+    const [bookmark,setBookmark] = useState([]);
     return(
         <IconButton
               aria-label={'Bookmark Button'}
