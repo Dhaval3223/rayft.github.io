@@ -49,9 +49,36 @@ export function Home()
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
 
-                    <HomePageCardBookmark/>
-                    <HomePageCardMore/>
-                    <HomePageCardBadge/>
+                <HomePageCardImage minH="200px" minW="300px" src={rectangle} />
+              </Box>
+              <Box p={2}>
+                <HomePageCardCaption
+                  as="h5"
+                  size="md"
+                  label="These tips could help you get more financial aid for college"
+                />
+              </Box>
+              <Flex px={2} pb={0}>
+                <HomePageCardText label="Floyd West" fontWeight="bold" />
+                <Spacer />
+                <HomePageCardText
+                  label="23 Mar &bull; 4 min read"
+                  fontWeight="bold"
+                />
+              </Flex>
+            </Flex>
+          </Col>
+          <Col>
+            <Flex direction="column" rounded={'md'} boxShadow={'md'}>
+              <Box
+                position={'relative'}
+                overflow={'hidden'}
+                mx={['0.3rem', '0.5rem']}
+                my={['0.3rem', '0.5rem']}
+              >
+                <HomePageCardBookmark />
+                <HomePageCardMore />
+                <HomePageCardBadge />
 
                     <HomePageCardImage
                         

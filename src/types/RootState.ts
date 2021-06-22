@@ -1,5 +1,5 @@
 import {LoginState } from "../app/pages/LoginPage/slice/types";
-import {CounterState} from '../app/components/slice/types';
+
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -9,6 +9,5 @@ import {CounterState} from '../app/components/slice/types';
 export interface RootState {
   //  loginpage?: LoginPage;
   login?:LoginState,
-  counter?:CounterState
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
