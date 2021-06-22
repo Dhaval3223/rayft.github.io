@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Flex, Box, Text, Spacer } from '@chakra-ui/react';
 import rectangle from './rectangle.png';
+import shape from './shape@2x.png';
 import HomePageCardBadge from './HomePageCardBadge';
 import HomePageCardBookmark from './HomePageCardBookmark';
 import HomePageCardMore from './HomePageCardMore';
@@ -9,6 +10,7 @@ import HomePageCardCaption from './HomePageCardCaption';
 import HomePageCardImage from './HomePageCardImage';
 import HomePageCardText from './HomePageCardText';
 import Header from './Header';
+import axios from 'axios';
 
 export function Home() {
   return (

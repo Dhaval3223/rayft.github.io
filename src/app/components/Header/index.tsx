@@ -1,4 +1,4 @@
-import { Box, Flex, Center, Spacer } from '@chakra-ui/react';
+import { Box, Flex, Center, Spacer, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import { IconsPanel } from '../IconsPanel/index';
@@ -10,7 +10,7 @@ export interface Props {}
 
 export function Header(props: Props) {
   return (
-    <Box position="fixed">
+    <Stack position="fixed" zIndex="99">
       <Box bg="#183380" height="44px">
         <Flex>
           <Center m={2}>
@@ -36,6 +36,6 @@ export function Header(props: Props) {
           </Box>
         </Flex>
       </Box>
-    </Box>
+    </Stack>
   );
 }
