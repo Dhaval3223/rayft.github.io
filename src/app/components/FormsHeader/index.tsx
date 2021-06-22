@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Center } from '@chakra-ui/react';
+import { Box, Flex, Image, Spacer, Center } from '@chakra-ui/react';
 import React from 'react';
 
 import Logo from '../../Assets/logo/logo.png';
@@ -9,24 +9,22 @@ export interface Props {
 
 export function FormsHeader(props: Props) {
   return (
-    <Box w="100%" h="44px" bg="#183380">
-      <Flex>
-        <Box margin="12px 470.6px  0 80px" width="65.9px" height="23px">
-          <Image src={Logo} />
-        </Box>
-        <Box
-          margin="12px 470.6px  0 80px"
-          width="65.9px"
-          height="23px"
-          color="#ffffff"
-          textAlign="center"
-          fontFamily="NunitoSans"
-          font-size="16px"
-          font-weight="800"
-        >
-          {props.name}
-        </Box>
-      </Flex>
-    </Box>
+    <Flex h="44px" bg="#183380">
+      <Box mt="12px" ml={['20px', '80px']}>
+        <Image src={Logo} />
+      </Box>
+      <Box
+        mt="11px"
+        width="100%"
+        height="23px"
+        color="#ffffff"
+        textAlign="center"
+        fontFamily="NunitoSans"
+        font-size="16px"
+        font-weight="800"
+      >
+        hello
+      </Box>
+    </Flex>
   );
 }

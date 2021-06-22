@@ -19,15 +19,18 @@ export function Header(props: Props) {
             </Box>
           </Center>
           <Center>
-            <Box margin="0 21.1px 0 80px" display={['none', 'none','none','block']}>
+            <Box
+              margin="0 21.1px 0 80px"
+              display={['none', 'none', 'none', 'block']}
+            >
               <MainLogo />
             </Box>
           </Center>
-          <Box mt={1.5} display={['none', 'none','none','block']}>
+          <Box mt={1.5} display={['none', 'none', 'none', 'block']}>
             <Inputsearch />
           </Box>
           <Spacer />
-          <Box display={['none', 'none','none','block']} mr="84px">
+          <Box display={['none', 'none', 'none', 'block']} mr="84px">
             <IconsPanel />
           </Box>
         </Flex>
