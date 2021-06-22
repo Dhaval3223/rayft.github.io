@@ -12,7 +12,7 @@ const HomePageCardBadge = () =>
           bg="transparent"
           color="white"
           borderWidth="1px"
-          bottom="8%"
+          bottom="4%"
           right="2%">
           $0.45
           </Badge>

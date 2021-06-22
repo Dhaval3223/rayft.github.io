@@ -25,6 +25,7 @@ const slice = createSlice({
   reducers: {
     validateEmailAddress : (state,action: PayloadAction<string>)=>
     {
+      state.email=action.payload;
       state.errors.email = validateEmail.test(state.email) ? "true" : 'false';
       console.log(state.errors.email);
     }
