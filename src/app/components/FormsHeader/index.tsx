@@ -9,23 +9,24 @@ export interface Props {
 
 export function FormsHeader(props: Props) {
   return (
-    <Box w="100%" h="44px" bg="#183380">
-      <Flex>
-        <Box margin="12px 470.6px  0 80px" width="65.9px" height="23px">
-          <Image src={Logo} />
-        </Box>
+    <Box w="100%" h="44px" bg="#183380" position="fixed">
+      <Flex color="white">
+        <Center w={['8em', '11em']}>
+          <Box m="0.8em" justifyContent={['left', 'center']}>
+            <Image src={Logo} />
+          </Box>
+        </Center>
+
         <Box
-          margin="12px 470.6px  0 80px"
-          width="65.9px"
-          height="23px"
+          flex="5"
+          textAlign={['left', 'center']}
           color="#ffffff"
-          textAlign="center"
-          fontFamily="NunitoSans"
           font-size="16px"
-          font-weight="800"
+          mt="0.5em"
         >
-          {props.name}
+          <b>{props.name}</b>
         </Box>
+        <Box flex="1"></Box>
       </Flex>
     </Box>
   );

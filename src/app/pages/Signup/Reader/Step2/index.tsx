@@ -8,7 +8,7 @@ import styled from 'styled-components/macro';
 import { Stack, Box, Flex, Button, Grid, Text } from '@chakra-ui/react';
 import { PageButton } from '../../../../components/PageButton/index';
 import { Title } from '../../../../components/Title/index';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 interface Props {}
 
@@ -33,7 +33,7 @@ export const Step_2 = memo((props: Props) => {
       <Flex
         flexDirection="column"
         width="100wh"
-        minHeight="100vh"
+        height={['75vh', '85vh']}
         justifyContent="center"
         alignItems="center"
         marginTop={['1em', '0em']}
@@ -45,7 +45,7 @@ export const Step_2 = memo((props: Props) => {
             boxShadow={{
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
-            width={['300px','716px']}
+            width={['300px', '716px']}
             className="m-auto"
             borderRadius="4px"
             pb="2em"
@@ -63,7 +63,7 @@ export const Step_2 = memo((props: Props) => {
                   'repeat(4, 1fr)',
                 ]}
                 gap={4}
-              justifyItems="center"
+                justifyItems="center"
               >
                 {btns.map(list => (
                   <Button
@@ -90,9 +90,7 @@ export const Step_2 = memo((props: Props) => {
             </Stack>
           </Box>
           <Text color="gray.300" textAlign="center">
-            <NavLink to="/homepage">
-            Skip this step
-            </NavLink>
+            <NavLink to="/homepage">Skip this step</NavLink>
           </Text>
         </Stack>
       </Flex>

@@ -17,7 +17,7 @@ import {
 export function AuthorProfile() {
   return (
     <Stack m={['0.6em', '1em']}>
-      <Box w={['fit-content', 'fit-content', 'fit-content','40em']} m="auto">
+      <Box w={['fit-content', 'fit-content', 'fit-content', '40em']} m="auto">
         <Flex>
           <Box>
             <ProfileTitle color="gray.500" label="PROFILE TITLE" />

@@ -28,7 +28,7 @@ export const Step4 = memo((props: Props) => {
       <Flex
         flexDirection="column"
         width="100wh"
-        height={['100vh']}
+        // minHeight={['75vh', '85vh']}
         justifyContent={['normal', 'center']}
         alignItems="center"
         marginTop={['1em', '0em']}
@@ -41,7 +41,6 @@ export const Step4 = memo((props: Props) => {
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
             borderRadius="4px"
-      
             w={['100%', '410px']}
             margin="auto"
             mt="2em"
@@ -138,17 +137,15 @@ export const Step4 = memo((props: Props) => {
                 </Tag>
               </Grid>
               <Stack pt="8em">
-              <PageButton
-              label="Get started"
-              color="#20cdbb"
-              fontcolor="white"
-              size="10em"
-              to="/Sign_up/Step_4"
-            />
+                <PageButton
+                  label="Get started"
+                  color="#20cdbb"
+                  fontcolor="white"
+                  size="10em"
+                  to="/Sign_up/Step_4"
+                />
               </Stack>
-          
             </Stack>
-        
           </Box>
         </Stack>
       </Flex>

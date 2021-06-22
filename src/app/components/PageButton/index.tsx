@@ -32,6 +32,7 @@ export function PageButton(props: Props) {
           _hover={{ background: { color } }}
           fontSize="1em"
           letterSpacing="1px"
+          mt="2.5em"
           onClick={to}
         >
           {label}

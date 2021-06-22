@@ -23,6 +23,8 @@ export function Home() {
               boxShadow={'md'}
               onClick={() => alert('hello')}
               cursor="pointer"
+              bg="white"
+              m="1em"
             >
               <Box
                 position={'relative'}
@@ -54,7 +56,13 @@ export function Home() {
             </Flex>
           </Col>
           <Col md="6">
-            <Flex direction="column" rounded={'md'} boxShadow={'md'}>
+            <Flex
+              direction="column"
+              rounded={'md'}
+              boxShadow={'md'}
+              bg="white"
+              m="1em"
+            >
               <Box
                 position={'relative'}
                 overflow={'hidden'}
@@ -85,7 +93,13 @@ export function Home() {
             </Flex>
           </Col>
           <Col md="4">
-            <Flex direction="column" rounded={'md'} boxShadow={'md'}>
+            <Flex
+              direction="column"
+              rounded={'md'}
+              boxShadow={'md'}
+              bg="white"
+              m="1em"
+            >
               <Box
                 position={'relative'}
                 overflow={'hidden'}
