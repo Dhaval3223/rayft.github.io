@@ -31,7 +31,7 @@ export function IconsPanel(props: Props) {
           </Center>
         </NavLink>
         <NavLink
-          to=""
+          to="/ExplorePage"
           activeStyle={{
             color: 'white',
             textDecoration: 'none',

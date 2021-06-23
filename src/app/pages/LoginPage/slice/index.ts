@@ -3,10 +3,12 @@ import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { loginSaga } from './saga';
 import { LoginState } from './types';
+import axios from 'axios';
 
 export const initialState: LoginState = {
   email: '',
   password: '',
+  isLogin:false,
   errors: {
     email: '',
     password: '',
@@ -24,6 +26,20 @@ const slice = createSlice({
   name: 'login',
   initialState,
   reducers: {
+    validateForm : (state) => {
+      if(!state.email)
+      {
+        state.errors.email="This Field is Required";
+      }
+      else if(!state.password)
+      {
+        state.errors.password="This Field is Required";
+      }
+      else
+      {
+          axios.post("https://private-16b8d3-rayftnew.apiary-mock.com/login");
+      }
+    },
     validateEmailAddress: (state, action: PayloadAction<string>) => {
       state.email = action.payload;
 

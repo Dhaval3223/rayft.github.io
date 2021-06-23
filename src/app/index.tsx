@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GlobalStyle } from 'styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
+import { ExplorePage } from './pages/ExplorePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { LoginPage } from './pages/LoginPage/index';
 import { useTranslation } from 'react-i18next';
@@ -47,6 +48,7 @@ export function App() {
         <Route exact path="/Sign_up/Step_2/R" component={Step_2} />
         <Route exact path="/Sign_up/Step_4" component={Step4} />
         <Route exact path="/homepage" component={HomePage} />
+        <Route exact path="/ExplorePage" component={ExplorePage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

@@ -16,6 +16,7 @@ import axios from "axios";
 export function Home()
 {
     const [data,setData]=useState<any[]>([]);
+    const [isBookmark,setBookmark] = useState<any[]>([]);
     useEffect(() => {
         axios
           .get('https://private-16b8d3-rayftnew.apiary-mock.com/articles', {
@@ -31,6 +32,12 @@ export function Home()
             console.log(err);
           });
       }, []);
+
+      console.log(data);
+      const handleSubmit = (event) =>{
+            event.preventDefault();
+            console.log(event.target.id);
+      }
     return(
     <>
         <Header/>
@@ -164,15 +171,14 @@ export function Home()
                     <Box
                 rounded={'md'}
                 boxShadow={'md'}
-                flexDirection="row"
-                id={data.id}>
+                flexDirection="row">
                 
                 <Box
                     position={'relative'}
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
 
-                    <HomePageCardBookmark/>
+                    <HomePageCardBookmark id={data.id}/>
                     <HomePageCardMore/>
                     <HomePageCardBadge/>
 

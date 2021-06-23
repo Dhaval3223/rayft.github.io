@@ -53,7 +53,8 @@ import { FormsHeader } from '../../../components/FormsHeader/index';
 
    const onChngEmail = event => {
     event.preventDefault();
-    setEmail(event.target.value);
+    const newVal = event.target.value;
+    setEmail(newVal);
     dispatch(actions.validateEmailAddress(email));
   };
   const onChngPsswrd = event => {
