@@ -15,7 +15,7 @@ export function FormsHeader(props: Props) {
       </Box>
       <Box
         mt="11px"
-        width="100%"
+        width="80%"
         height="23px"
         color="#ffffff"
         textAlign="center"
@@ -23,7 +23,7 @@ export function FormsHeader(props: Props) {
         font-size="16px"
         font-weight="800"
       >
-        hello
+        {props.name}
       </Box>
     </Flex>
   );

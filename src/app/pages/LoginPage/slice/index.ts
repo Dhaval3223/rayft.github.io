@@ -5,34 +5,42 @@ import { loginSaga } from './saga';
 import { LoginState } from './types';
 
 export const initialState: LoginState = {
-    email:'',
-    password:'',
-    errors:{
-        email:'',
-        password:'',
-    }
+  email: '',
+  password: '',
+  errors: {
+    email: '',
+    password: '',
+  },
 };
 
-const validateEmail = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-// const validateForm = errors => {
-//   let valid = true;
-//   Object.values(errors).forEach(val => val.length > 0 && (valid = false));
-//   return valid;
-// };
+const validateEmail = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+);
+const ValidPassword = RegExp(
+  /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+);
+
 const slice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    validateEmailAddress : (state,action: PayloadAction<string>)=>
-    {
-      state.email=action.payload;
-      state.errors.email = validateEmail.test(state.email) ? "true" : 'false';
-      console.log(state.errors.email);
-    }
+    validateEmailAddress: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+
+      state.errors.email = validateEmail.test(state.email)
+        ? ''
+        : 'enter valid email';
+    },
+    Password: (state, action: PayloadAction<string>) => {
+      state.password = action.payload;
+      state.errors.password = ValidPassword.test(state.password)
+        ? ''
+        : 'min 8 letter password, with at least a symbol, upper and lower case letters and a number';
+    },
   },
 });
 
-export const { validateEmailAddress} = slice.actions;
+export const { validateEmailAddress, Password } = slice.actions;
 
 export const useLoginSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });
