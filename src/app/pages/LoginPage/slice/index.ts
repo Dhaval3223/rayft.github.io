@@ -27,16 +27,22 @@ const slice = createSlice({
     validateEmailAddress: (state, action: PayloadAction<string>) => {
       state.email = action.payload;
 
-      state.errors.email = validateEmail.test(state.email)
-        ? ''
-        : 'enter valid email';
+      state.errors.email =
+        state.email === ''
+          ? 'Username Cannot be Empty'
+          : validateEmail.test(state.email)
+          ? ''
+          : 'Email is not valid';
       console.log(state.errors.email);
     },
     Password: (state, action: PayloadAction<string>) => {
       state.password = action.payload;
-      state.errors.password = ValidPassword.test(state.password)
-        ? ''
-        : 'for min 8 letter password, with at least a symbol, upper and lower case letters and a number';
+      state.errors.password =
+        state.password === ''
+          ? 'Password Cannot be Empty'
+          : ValidPassword.test(state.password)
+          ? ''
+          : 'Your password must be at least 8 characters, with at least a symbol, upper and lower case letters and a number';
       console.log(state.errors.password);
     },
   },

@@ -10,7 +10,7 @@ export interface Props {}
 
 export function Header(props: Props) {
   return (
-    <Box position="fixed">
+    <Box position="fixed" w="100vw" zIndex="99">
       <Box bg="#183380" height="44px">
         <Flex>
           <Center m={2}>

@@ -24,7 +24,7 @@ import { FormsHeader } from '../../components/FormsHeader/index';
 //import {selectLogin} from '../../pages/LoginPage/slice/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../types';
-
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import {
   validateEmailAddress,
@@ -71,6 +71,17 @@ export const LoginPage = memo((props: Props) => {
   const submit = () => {
     dispatch(actions.validateEmailAddress(email));
     dispatch(actions.Password(psswrd));
+    alert('hello');
+    axios
+      .post(`https://private-93e935-rayft2.apiary-mock.com/login`)
+      .then(res => {
+        alert('hello');
+        console.log(res.status);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
     // push('/homepage')
   };
   const onChngEmail = event => {
@@ -126,7 +137,9 @@ export const LoginPage = memo((props: Props) => {
                     value={email}
                     onchng={onChngEmail}
                   />
-                  <Text color="red">{errors.email}</Text>
+                  <Text color="red" fontSize="0.9em">
+                    {errors.email}
+                  </Text>
                 </FormControl>
 
                 <FormControl className="mb-5" isRequired>
@@ -136,7 +149,9 @@ export const LoginPage = memo((props: Props) => {
                     value={psswrd}
                     onchng={onChngPsswrd}
                   />
-                  <Text color="red">{errors.password}</Text>
+                  <Text color="red" fontSize="0.9em">
+                    {errors.password}
+                  </Text>
                   <InputRightElement height="6em">
                     <Button
                       h="1.75rem"
