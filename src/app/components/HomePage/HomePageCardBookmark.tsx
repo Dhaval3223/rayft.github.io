@@ -24,7 +24,7 @@ const HomePageCardBookmark = (props:Iprops) =>
     {
         event.preventDefault()
         console.log(event.target.id);
-        setBookmark(false ? true : true);
+        setBookmark(bookmark ? false : true);
         console.log(bookmark);
         // console.log(bookmark);
         dispatch(actions.bookmark(event.target.id));
