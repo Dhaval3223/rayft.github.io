@@ -1,5 +1,6 @@
 import {LoginState } from "../app/pages/LoginPage/slice/types";
 import {SingupState } from "../app/pages/Signup/Step1/slice/types";
+import {BookmarkState } from "../app/components/HomePage/slice/types";
 
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
@@ -11,5 +12,6 @@ export interface RootState {
   //  loginpage?: LoginPage;
   login?:LoginState,
   singup?:SingupState,
+  bookmark?:BookmarkState,
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
