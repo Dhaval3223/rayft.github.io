@@ -15,7 +15,7 @@ export function FormsHeader(props: Props) {
       </Box>
       <Box
         mt="11px"
-        width="80%"
+        width="76%"
         height="23px"
         color="#ffffff"
         textAlign="center"
