@@ -11,25 +11,31 @@ import { Stack, Image, Box, Link, Input, Flex, Text } from '@chakra-ui/react';
 import { PageButton } from '../../../components/PageButton/index';
 import { Title } from '../../../components/Title/index';
 import upload from '../../../../../src/upload.png';
+import { FormsHeader } from '../../../components/FormsHeader/index';
+import { useHistory } from 'react-router-dom';
 
 interface Props {}
 
 export const Step2 = memo((props: Props) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { t, i18n } = useTranslation();
+  const { push } = useHistory();
+  const submit = () => {
+    push('/Sign_up/Step_3');
+  };
 
   return (
     <Div>
       {t('')}
+      <FormsHeader name="Sign Up" />
       <Flex
         flexDirection="column"
         width="100wh"
-        height={['100vh']}
+        minHeight="100vh"
         justifyContent="center"
         alignItems="center"
-        marginTop={['1em', '0em']}
       >
-        <Stack>
+        <Stack mt="2em" mb="5em">
           <Title title="Tell us more about yourself" />
 
           <Box
@@ -50,23 +56,23 @@ export const Step2 = memo((props: Props) => {
               justifyContent="center"
               alignItems="center"
             >
-              <Input
-                type="file"
-                opacity="0"
-                position="relative"
-                top={['0']}
-                w="8em"
-                h="7em"
-                borderRadius="50%"
-              />
+              <Stack position="relative">
+                <Image
+                  boxSize="120px"
+                  src={upload}
+                  alt="Segun Adebayo"
+                  position="absolute"
+                  top={['0em']}
+                />
+                <Input
+                  type="file"
+                  opacity="0"
+                  w="8em"
+                  h="7em"
+                  borderRadius="50%"
+                />
+              </Stack>
 
-              <Image
-                boxSize="120px"
-                src={upload}
-                alt="Segun Adebayo"
-                position="absolute"
-                top={['9em', '10em', '10em', '10em', '13em']}
-              />  
               <Stack marginTop="3em">
                 <Text opacity="0.3" fontSize="0.8em" color="#242a41">
                   <b>Bio</b>
@@ -78,15 +84,15 @@ export const Step2 = memo((props: Props) => {
                   laboris nisi ut ipsum dolor sit
                 </Text>
               </Stack>
-            </Stack>
-            <Stack m="2em">
-              <PageButton
-                label="Next"
-                color="#20cdbb"
-                fontcolor="white"
-                size="10em"
-                to="/Sign_up/Step_2"
-              />
+              <Stack m="2em">
+                <PageButton
+                  label="Next"
+                  color="#20cdbb"
+                  fontcolor="white"
+                  size="20em"
+                  to={submit}
+                />
+              </Stack>
             </Stack>
           </Box>
         </Stack>

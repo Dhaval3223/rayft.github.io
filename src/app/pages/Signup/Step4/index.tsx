@@ -19,21 +19,22 @@ import {
 import { PageButton } from '../../../components/PageButton/index';
 import { Title } from '../../../components/Title/index';
 import { TextFiled } from '../../../components/TextFiled/index';
+import { FormsHeader } from '../../../components/FormsHeader/index';
 
 interface Props {}
 
 export const Step4 = memo((props: Props) => {
   return (
     <Div>
+      <FormsHeader name="Sign Up" />
       <Flex
         flexDirection="column"
         width="100wh"
-        height={['100vh']}
+        // minHeight={['75vh', '85vh']}
         justifyContent={['normal', 'center']}
         alignItems="center"
-        marginTop={['1em', '0em']}
       >
-        <Stack>
+        <Stack marginTop={['1.5em', '2em']} mb="5em">
           <Title title="You want to write about" />
 
           <Box
@@ -47,7 +48,7 @@ export const Step4 = memo((props: Props) => {
           >
             <Stack
               spacing={4}
-              padding={{ sm: '1em', md: '2.5em' }}
+              padding={{ sm: '2em', md: '2.5em' }}
               m={['1.3em', '0em']}
               backgroundColor="whiteAlpha.900"
             >
@@ -136,7 +137,7 @@ export const Step4 = memo((props: Props) => {
                   </TagLabel>
                 </Tag>
               </Grid>
-              <Stack pt="8em">
+              <Stack pt="3em">
                 <PageButton
                   label="Get started"
                   color="#20cdbb"

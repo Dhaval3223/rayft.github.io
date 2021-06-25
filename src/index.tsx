@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 // Use consistent styling
 import 'sanitize.css/sanitize.css';
 
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 // Import root app
 import { App } from 'app';
@@ -31,12 +31,22 @@ import './locales/i18n';
 
 const store = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
-
+const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        minH: '100%',
+        bg: ['white', '#f7f8fa'],
+        overflowX: 'hidden',
+      },
+    },
+  },
+});
 ReactDOM.render(
   <Provider store={store}>
     <HelmetProvider>
       <React.StrictMode>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <App />
         </ChakraProvider>
       </React.StrictMode>

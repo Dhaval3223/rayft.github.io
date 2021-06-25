@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image} from '@chakra-ui/react';
+import { Image } from '@chakra-ui/react';
 
 export interface Iprops{
     src:string

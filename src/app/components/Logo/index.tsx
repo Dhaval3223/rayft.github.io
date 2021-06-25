@@ -6,7 +6,7 @@ import Logo from '../../Assets/logo/logo.png';
 export function MainLogo() {
   return (
     <Box>
-      <Image src={Logo} />
+      <img src={Logo} />
     </Box>
   );
 }

@@ -1,21 +1,29 @@
 import React from 'react';
 import { Profile } from './Profile';
-import { Image, Button, Heading, Text } from '@chakra-ui/react';
+import {
+  Image,
+  Button,
+  Heading,
+  Text,
+  Stack,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import group from './group-7.png';
 import styled from 'styled-components/macro';
 import AuthorProfile from '../AuthorProfile/Loadable';
+import { Header } from '../Header/index';
 
 export function AuthorTrending() {
   return (
     <>
       <Profile>
-        <Image src={group} />
+        <Image src={group} px={2}/>
         <ProfileContent>
-          <Heading size="lg" as="h3" pt={8}>
+          <Heading size="lg" as="h4" pt={8} textAlign="center">
             Mildred Grant
           </Heading>
-          <Text opacity="50%" justifyContent="center" alignItems="center" p={2}>
+          <Text textAlign="center" opacity="50%" justifyContent="center" alignItems="center" px={2}>
             5.3k followers &bull; 43 followings{' '}
           </Text>
         </ProfileContent>
@@ -24,6 +32,7 @@ export function AuthorTrending() {
           h="25px"
           colorScheme="teal"
           variant="outline"
+          m={2}
         >
           Follow
         </Button>
@@ -31,6 +40,7 @@ export function AuthorTrending() {
       <ProfileContent>
         <Text
           mt={1}
+          mx={2}
           alignItems="center"
           justifyContent="center"
           display="flex"
@@ -45,12 +55,12 @@ export function AuthorTrending() {
           minim veniam, quis exercitation ullamco laboris nisi ut ali
         </Text>
       </ProfileContent>
-      <Tabs p="4">
+      <Tabs p={4}>
         <TabList color="teal" justifyContent="center" alignItems="center">
-          <Tab fontWeight="bold">Trending</Tab>
-          <Tab fontWeight="bold">Latests</Tab>
-          <Tab fontWeight="bold">Profile</Tab>
-          <Tab fontWeight="bold">Followers</Tab>
+          <Tab fontWeight="bold" p={['1','4']}>Trending</Tab>
+          <Tab fontWeight="bold" p={['1','4']}>Latests</Tab>
+          <Tab fontWeight="bold" p={['1','4']}>Profile</Tab>
+          <Tab fontWeight="bold" p={['1','4']}>Followers</Tab>
         </TabList>
 
         <TabPanels>
@@ -75,6 +85,5 @@ export const ProfileContent = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 10px;
   word-wrap: break-word;
 `;

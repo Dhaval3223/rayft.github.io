@@ -84,7 +84,8 @@ import { FormsHeader } from '../../../components/FormsHeader/index';
        <Flex
         flexDirection="column"
         width="100wh"
-        minHeight="100vh"
+        minH="100vh"
+        overflow="hidden"
         justifyContent="center"
         alignItems="center"
         marginTop={['1em', '0em']}

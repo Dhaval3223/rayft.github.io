@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { NavLink , Link} from 'react-router-dom';
-import { Box, Icon, Text, Flex, Center} from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+import { Box, Icon, Text, Flex, Center, Link } from '@chakra-ui/react';
 import {
   MdExplore,
   MdBookmark,
@@ -51,7 +51,7 @@ export function IconsPanel(props: Props) {
           <Center ml="22px">
             <Icon as={HiOutlinePencilAlt} w="24px" h="24px" />
             <Text ml="6px" fontSize="13px" opacity="0.55" as="b">
-              StartWriting
+              Start Writing
             </Text>
           </Center>
         </NavLink>
@@ -67,7 +67,7 @@ export function IconsPanel(props: Props) {
           </Center>
         </NavLink>
         <NavLink
-          to=""
+          to="/loginpage"
           activeStyle={{
             color: 'white',
             textDecoration: 'none',
@@ -78,7 +78,7 @@ export function IconsPanel(props: Props) {
           </Center>
         </NavLink>
         <NavLink
-          to=""
+          to="/login"
           activeStyle={{
             color: 'white',
             textDecoration: 'none',
