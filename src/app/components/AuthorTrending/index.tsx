@@ -1,17 +1,11 @@
 import React from 'react';
 import { Profile } from './Profile';
-import {
-  Image,
-  Button,
-  Heading,
-  Text,
-  Stack,
-  SimpleGrid,
-} from '@chakra-ui/react';
+import { Image, Button, Heading, Text } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import group from './group-7.png';
 import styled from 'styled-components/macro';
 import AuthorProfile from '../AuthorProfile/Loadable';
+
 import { Header } from '../Header/index';
 
 export function AuthorTrending() {

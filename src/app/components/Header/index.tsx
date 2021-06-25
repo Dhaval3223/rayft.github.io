@@ -10,7 +10,7 @@ export interface Props {}
 
 export function Header(props: Props) {
   return (
-    <Box position="fixed" w="100vw" zIndex="99">
+    <Box>
       <Box bg="#183380" height="44px">
         <Flex>
           <Center m={2}>
@@ -30,10 +30,7 @@ export function Header(props: Props) {
             <Inputsearch />
           </Box>
           <Spacer />
-          <Box
-            display={['none', 'none', 'none', 'block']}
-            mr={['0px', '0px', '0px', '0px', '84px']}
-          >
+          <Box display={['none', 'none', 'none', 'block']} mr="84px">
             <IconsPanel />
           </Box>
         </Flex>

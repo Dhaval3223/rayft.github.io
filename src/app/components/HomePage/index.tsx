@@ -55,6 +55,7 @@ export function Home()
                     
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
+
                 <HomePageCardImage minH="200px" minW="300px" src={rectangle} />
               </Box>
               <Box p={2}>
@@ -85,6 +86,7 @@ export function Home()
                 <HomePageCardBookmark />
                 <HomePageCardMore />
                 <HomePageCardBadge />
+
                     <HomePageCardImage
                         
                         src={rectangle}
@@ -110,9 +112,11 @@ export function Home()
                     overflow={'hidden'}
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
+
                     <HomePageCardBookmark/>
                     <HomePageCardMore/>
                     <HomePageCardBadge/>
+
                     <HomePageCardImage
                        
                         src={rectangle}
@@ -138,9 +142,11 @@ export function Home()
                     overflow={'hidden'}
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
+
                     <HomePageCardBookmark/>
                     <HomePageCardMore/>
                     <HomePageCardBadge/>
+
                     <HomePageCardImage
                         
                         src={rectangle}

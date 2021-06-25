@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge} from '@chakra-ui/react';
+import { Badge } from '@chakra-ui/react';
 
 const HomePageCardBadge = () =>
 {

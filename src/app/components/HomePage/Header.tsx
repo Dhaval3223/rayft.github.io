@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Flex, Box, Text, Spacer, Stack } from '@chakra-ui/react';
+import { Flex, Box, Spacer, Stack } from '@chakra-ui/react';
 import HeadingText from './HeadingText';
 import HomePageCardText from './HomePageCardText';
 

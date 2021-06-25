@@ -13,7 +13,7 @@ interface Props {
   color: any;
   fontcolor: any;
   size: any;
-  to: any;
+  to: string;
 }
 
 export function PageButton(props: Props) {
@@ -32,8 +32,7 @@ export function PageButton(props: Props) {
           _hover={{ background: { color } }}
           fontSize="1em"
           letterSpacing="1px"
-          mt={['1em', '2.5em']}
-          onClick={to}
+          onClick={() => push(to)}
         >
           {label}
         </Button>

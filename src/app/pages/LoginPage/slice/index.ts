@@ -4,11 +4,13 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { loginSaga } from './saga';
 import { LoginState } from './types';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 export const initialState: LoginState = {
   email: '',
   password: '',
-  isLogin:false,
+  user: null,
+  isLogin: false,
   errors: {
     email: '',
     password: '',
@@ -52,6 +54,10 @@ const slice = createSlice({
       state.errors.password = ValidPassword.test(state.password)
         ? ''
         : 'min 8 letter password, with at least a symbol, upper and lower case letters and a number';
+    },
+    login: (state, action: PayloadAction<any>) => {
+      state.isLogin = true;
+      state.user = action.payload;
     },
   },
 });

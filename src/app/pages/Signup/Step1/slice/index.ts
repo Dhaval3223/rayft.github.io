@@ -66,7 +66,13 @@ const slice = createSlice({
   },
 });
 
-export const { validateForm,validateEmailAddress, Password ,FirstName , LastName} = slice.actions;
+export const {
+  validateForm,
+  validateEmailAddress,
+  Password,
+  FirstName,
+  LastName,
+} = slice.actions;
 
 export const useSingupSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });
