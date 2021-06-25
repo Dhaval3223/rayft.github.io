@@ -9,7 +9,8 @@ import {
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
-import rectangle from '../../../img/rectangle.png';
+import 'bootstrap/dist/css/bootstrap.css';
+import rectangle from './rectangle.png';
 import shape from './shape@2x.png';
 import HomePageCardBadge from './HomePageCardBadge';
 import HomePageCardBookmark from './HomePageCardBookmark';
@@ -22,7 +23,6 @@ import axios from 'axios';
 
 export function Home() {
   const [data, setData] = useState<any[]>([]);
-  const [isBookmark, setBookmark] = useState<any[]>([]);
   useEffect(() => {
     axios
       .get('https://private-16b8d3-rayftnew.apiary-mock.com/articles', {
@@ -38,12 +38,6 @@ export function Home() {
         console.log(err);
       });
   }, []);
-
-  console.log(data);
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(event.target.id);
-  };
   return (
     <>
       <Header />
@@ -61,6 +55,7 @@ export function Home() {
                     
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
+
                 <HomePageCardImage minH="200px" minW="300px" src={rectangle} />
               </Box>
               <Box p={2}>
@@ -91,6 +86,7 @@ export function Home() {
                 <HomePageCardBookmark />
                 <HomePageCardMore />
                 <HomePageCardBadge />
+
                     <HomePageCardImage
                         
                         src={rectangle}
@@ -116,9 +112,11 @@ export function Home() {
                     overflow={'hidden'}
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
+
                     <HomePageCardBookmark/>
                     <HomePageCardMore/>
                     <HomePageCardBadge/>
+
                     <HomePageCardImage
                        
                         src={rectangle}
@@ -144,9 +142,11 @@ export function Home() {
                     overflow={'hidden'}
                     mx={["0.3rem","0.5rem"]}
                     my={["0.3rem","0.5rem"]}>
+
                     <HomePageCardBookmark/>
                     <HomePageCardMore/>
                     <HomePageCardBadge/>
+
                     <HomePageCardImage
                         
                         src={rectangle}
@@ -165,23 +165,21 @@ export function Home() {
             </Row>
         </Container> */}
       <Container>
-        <SimpleGrid columns={[1, 1, 1, 2]} spacing="5px" justifyItems="center">
+        <SimpleGrid columns={{ md: 2, lg: 2, sm: 1 }} spacing="5px">
           {data.map(data => {
             return (
               <Box
                 rounded={'md'}
                 boxShadow={'md'}
                 flexDirection="row"
-                w="fit-content"
-                bg="white"
+                id={data.id}
               >
                 <Box
                   position={'relative'}
                   mx={['0.3rem', '0.5rem']}
                   my={['0.3rem', '0.5rem']}
-                  w="fit-content"
                 >
-                  <HomePageCardBookmark id={data.id} />
+                  <HomePageCardBookmark />
                   <HomePageCardMore />
                   <HomePageCardBadge />
 

@@ -9,7 +9,7 @@ export interface Iprops {
 const HomePageCardCaption = (props: Iprops) => {
   const { label, as, size } = props;
   return (
-    <Heading as={as} size={size} w={['25em']}>
+    <Heading as={as} size={size}>
       {label}
     </Heading>
   );

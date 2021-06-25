@@ -4,10 +4,12 @@
  *
  */
 import { NavLink } from 'react-router-dom';
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
 import { InputFiled } from '../../components/InputFiled/index';
+import { useHistory } from 'react-router-dom';
+
 import {
   Button,
   Stack,
@@ -18,14 +20,13 @@ import {
   FormControl,
   Flex,
 } from '@chakra-ui/react';
-import { PageButton } from '../../components/PageButton/index';
 import { Title } from '../../components/Title/index';
 import { FormsHeader } from '../../components/FormsHeader/index';
-//import {selectLogin} from '../../pages/LoginPage/slice/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../types';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+
 import {
   validateEmailAddress,
   Password,
@@ -48,79 +49,87 @@ export const LoginPage = memo((props: Props) => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const [email, setEmail] = React.useState('');
-  const [posts, setPosts] = useState<Props[]>([]);
   const [psswrd, setPasswrd] = React.useState('');
+  const [data, setData] = React.useState<any[]>([]);
+  const history = useHistory();
 
-  // React.useEffect(() => {
-  //   axios
-  //     .get('https://private-7957dd-rayft2.apiary-mock.com/users')
-  //     .then(res => {
-  //       // let arr = JSON.stringify(res);
-  //       console.log(res.data[21]);
-  //       alert(res);
-  //       setPosts(res.data);
-  //       console.log(posts);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .post(
+        'https://private-16b8d3-rayftnew.apiary-mock.com/login',
+        {
+          user: {
+            email: email,
+            password: psswrd,
+          },
+        },
+        {
+          withCredentials: true,
+        },
+      )
+      .then(response => {
+        console.log(response);
+        // const result = JSON.parse(response.data);
+        setData(response.data);
+        console.log(data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   const { errors } = useSelector(
     (state: RootState) => state?.login || initialState,
   );
   const { actions } = useLoginSlice();
   const dispatch = useDispatch();
+
   const submit = () => {
     dispatch(actions.validateEmailAddress(email));
     dispatch(actions.Password(psswrd));
-    push('/homepage');
-
-    axios
-      .post(`https://private-93e935-rayft2.apiary-mock.com/login`)
-      .then(res => {
-        // alert("hello")
-        console.log(res.data.data.name);
-        if (res.status === 200) {
-          console.log(res.status);
-          dispatch(actions.Login(email));
-          if (res.data.data.name === email) {
-            alert('email');
-
-            push('/homepage');
-          }
-        } else {
-          push('/loginpage');
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
-
     // push('/homepage')
   };
+
   const onChngEmail = event => {
     console.log(event.target.value);
     event.preventDefault();
+    dispatch(actions.validateEmailAddress(email));
     setEmail(event.target.value);
   };
+
   const onChngPsswrd = event => {
     console.log(event.target.value);
     event.preventDefault();
+    dispatch(actions.Password(psswrd));
     setPasswrd(event.target.value);
   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!email || !psswrd) {
+      dispatch(actions.validateForm());
+    } else {
+      if (email === 'abc@gmail.com' && psswrd === 'Abc@123abc') {
+        dispatch(
+          actions.login({
+            email: email,
+            password: psswrd,
+          }),
+        );
+        history.push('/homepage');
+      }
+    }
+  };
+
   return (
-    <>
-      {/* <form onSubmit={submit}>
-        <label>{errors.email}</label>
-        <input type="email" value={email} onChange={handleChange} />
-        <button type="submit">Submit</button>
-      </form> */}
+    <form onSubmit={e => handleSubmit(e)}>
       <FormsHeader name="Log-in" />
-      <Div>
+      <div>
         {t('')}
-        {/* <ul>{posts.map(post => (<li >{post.user_name}</li>))}</ul> */}
         <Flex
           flexDirection="column"
           width="100wh"
-          minH={['95vh']}
+          height={['95vh']}
           justifyContent="center"
           alignItems="center"
           // bg={["white","#f7f8fa"]}
@@ -142,28 +151,24 @@ export const LoginPage = memo((props: Props) => {
                 padding={{ sm: '1em', lg: '2em' }}
                 backgroundColor="whiteAlpha.900"
               >
-                <FormControl className="mb-5" isRequired>
+                <FormControl className="mb-5">
                   <InputFiled
                     text="text"
                     label="Email or Username"
                     value={email}
                     onchng={onChngEmail}
                   />
-                  <Text color="red" fontSize="0.9em">
-                    {errors.email}
-                  </Text>
+                  <Text color="red">{errors.email}</Text>
                 </FormControl>
 
-                <FormControl className="mb-5" isRequired>
+                <FormControl className="mb-5">
                   <InputFiled
                     text={show ? 'text' : 'password'}
                     label="PassWord"
                     value={psswrd}
                     onchng={onChngPsswrd}
                   />
-                  <Text color="red" fontSize="0.9em">
-                    {errors.password}
-                  </Text>
+                  <Text color="red">{errors.password}</Text>
                   <InputRightElement height="6em">
                     <Button
                       h="1.75rem"
@@ -175,13 +180,20 @@ export const LoginPage = memo((props: Props) => {
                     </Button>
                   </InputRightElement>
                 </FormControl>
-                <PageButton
-                  to={submit}
-                  label="Log in"
-                  color="#20cdbb"
-                  fontcolor="white"
-                  size="10em"
-                />
+                <Button
+                  my="4"
+                  bg="#20cdbb"
+                  p="1.5em"
+                  color="white"
+                  borderRadius="22.5px"
+                  minW="20em"
+                  fontWeight="700"
+                  fontSize="1em"
+                  letterSpacing="1px"
+                  type="submit"
+                >
+                  Log in
+                </Button>
                 <Link textAlign="center" color="#51a8d1" p="1em 0em 0.8em 0em">
                   Forgot password?
                 </Link>
@@ -190,7 +202,7 @@ export const LoginPage = memo((props: Props) => {
           </Stack>
         </Flex>
 
-        <Stack mt={['1.5em', '0em']} textAlign="center">
+        <Stack mt={['2em', '0em']} textAlign="center">
           <Text color="gray.300">
             Don’t have an account yet?{' '}
             <Link color="#51a8d1" fontWeight="700">
@@ -198,10 +210,8 @@ export const LoginPage = memo((props: Props) => {
             </Link>
           </Text>
         </Stack>
-
-        {/*  {t(...messages.someThing())}  */}
-      </Div>
-    </>
+      </div>
+    </form>
   );
 });
 

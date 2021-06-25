@@ -6,6 +6,6 @@ export interface Iprops {
 }
 const HomePageCardImage = (props: Iprops) => {
   const { src } = props;
-  return <Image src={src} minW={['24em', '200px']} maxH="200px" />;
+  return <Image src={src} minW="200px" maxH="200px" />;
 };
 export default HomePageCardImage;

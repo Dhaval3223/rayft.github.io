@@ -1,10 +1,12 @@
 /* --- STATE --- */
-export interface LoginState {
+export interface SingupState {
+  firstname: string;
+  lastname: string;
   email: string;
   password: string;
-  isLogin: boolean;
-  user: null;
   errors: {
+    firstname: string;
+    lastname: string;
     email: string;
     password: string;
   };

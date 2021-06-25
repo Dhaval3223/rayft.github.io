@@ -1,34 +1,40 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-import { loginSaga } from './saga';
-import { LoginState } from './types';
-import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { singupSaga } from './saga';
+import { SingupState } from './types';
 
-export const initialState: LoginState = {
+export const initialState: SingupState = {
+  firstname: '',
+  lastname: '',
   email: '',
   password: '',
-  user: null,
-  isLogin: false,
   errors: {
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
   },
 };
-
 const validateEmail = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
 );
 const ValidPassword = RegExp(
   /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
 );
+const validateFirstName = RegExp(/^[a-zA-Z]+ [a-zA-Z]+$/);
 
 const slice = createSlice({
-  name: 'login',
+  name: 'singup',
   initialState,
   reducers: {
     validateForm: state => {
+      if (!state.firstname) {
+        state.errors.firstname = 'This Field is Required';
+      }
+      if (!state.lastname) {
+        state.errors.lastname = 'This Field is Required';
+      }
       if (!state.email) {
         state.errors.email = 'This Field is Required';
       }
@@ -49,17 +55,26 @@ const slice = createSlice({
         ? ''
         : 'min 8 letter password, with at least a symbol, upper and lower case letters and a number';
     },
-    login: (state, action: PayloadAction<any>) => {
-      state.isLogin = true;
-      state.user = action.payload;
+    FirstName: (state, action: PayloadAction<string>) => {
+      state.firstname = action.payload;
+    },
+    LastName: (state, action: PayloadAction<string>) => {
+      state.lastname = action.payload;
     },
   },
 });
 
-export const { validateEmailAddress, Password } = slice.actions;
+export const {
+  validateForm,
+  validateEmailAddress,
+  Password,
+  FirstName,
+  LastName,
+} = slice.actions;
 
-export const useLoginSlice = () => {
+export const useSingupSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });
+  useInjectSaga({ key: slice.name, saga: singupSaga });
   return { actions: slice.actions };
 };
 
@@ -67,7 +82,7 @@ export const useLoginSlice = () => {
  * Example Usage:
  *
  * export function MyComponentNeedingThisSlice() {
- *  const { actions } = useLoginSlice();
+ *  const { actions } = useSingupSlice();
  *
  *  const onButtonClick = (evt) => {
  *    dispatch(actions.someAction());

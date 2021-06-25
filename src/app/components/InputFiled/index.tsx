@@ -22,7 +22,7 @@ export const InputFiled = memo((props: Props) => {
   const { label, text, value, onchng } = props;
 
   return (
-    <Div>
+    <div>
       {t('')}
 
       <Text
@@ -38,14 +38,12 @@ export const InputFiled = memo((props: Props) => {
         variant="flushed"
         type={text}
         size="lg"
-        required
         fontWeight="bold"
         value={value}
         onChange={onchng}
         // isInvalid
       />
-      {/*  {t(...messages.someThing())}  */}
-    </Div>
+    </div>
   );
 });
 

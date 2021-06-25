@@ -11,7 +11,6 @@ import { Stack, Text, Box, Flex } from '@chakra-ui/react';
 import { PageButton } from '../../../components/PageButton/index';
 import { Title } from '../../../components/Title/index';
 import { TextFiled } from '../../../components/TextFiled/index';
-import { FormsHeader } from '../../../components/FormsHeader/index';
 
 interface Props {}
 
@@ -23,16 +22,13 @@ export const Step3 = memo((props: Props) => {
     <Div style={{ overflowX: 'hidden' }}>
       {t('')}
       {/*  {t(...messages.someThing())}  */}
-      <FormsHeader name="Sign Up" />
       <Flex
         flexDirection="column"
         width="100wh"
-        // height={[ '100vh']}
+        height={['100vh']}
         justifyContent="center"
         alignItems="center"
-        mt="2em"
-        mb="5em"
-        // bg={["white","#f7f8fa"]}
+        marginTop={['1em', '1em']}
       >
         <Title title="Your experience…" />
 
@@ -64,7 +60,7 @@ export const Step3 = memo((props: Props) => {
             <button
               type="button"
               className="btn btn-lg w-50 text-left pl-0"
-              style={{ color: 'rgba(0, 0, 0, 0.2)', textAlign: 'left' }}
+              style={{ color: 'rgba(0, 0, 0, 0.2)' }}
             >
               {' '}
               <b> + Add more</b>
@@ -81,7 +77,7 @@ export const Step3 = memo((props: Props) => {
             <button
               type="button"
               className="btn btn-lg w-50 text-left pl-0"
-              style={{ color: 'rgba(0, 0, 0, 0.2)', textAlign: 'left' }}
+              style={{ color: 'rgba(0, 0, 0, 0.2)' }}
               onClick={() => {
                 alert('hello');
               }}
@@ -95,7 +91,7 @@ export const Step3 = memo((props: Props) => {
               color="#20cdbb"
               fontcolor="white"
               size="10em"
-              to="/Sign_up/Step_3"
+              to="/Sign_up/Step_4"
             />
           </Stack>
         </Box>

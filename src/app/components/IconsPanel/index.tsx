@@ -17,7 +17,7 @@ export function IconsPanel(props: Props) {
     <Box bg="#183380" w="490px" p="10px" color="white">
       <Flex>
         <NavLink
-          to=""
+          to="/"
           activeStyle={{
             color: 'white',
             textDecoration: 'none',
@@ -31,7 +31,7 @@ export function IconsPanel(props: Props) {
           </Center>
         </NavLink>
         <NavLink
-          to="/login"
+          to=""
           activeStyle={{
             color: 'white',
             textDecoration: 'none',
@@ -54,8 +54,13 @@ export function IconsPanel(props: Props) {
           <Center ml="22px">
             <Icon as={HiOutlinePencilAlt} w="24px" h="24px" />
             <Text ml="6px" fontSize="13px" opacity="0.55" as="b">
-              Start Writing
+              StartWriting
             </Text>
+          </Center>
+        </NavLink>
+        <NavLink to="/All_Transactions">
+          <Center ml="22px">
+            <Icon as={MdAccountBalanceWallet} w="24px" h="24px" />
           </Center>
         </NavLink>
         <NavLink
@@ -66,22 +71,11 @@ export function IconsPanel(props: Props) {
           }}
         >
           <Center ml="22px">
-            <Icon as={MdAccountBalanceWallet} w="24px" h="24px" />
-          </Center>
-        </NavLink>
-        <NavLink
-          to="/loginpage"
-          activeStyle={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          <Center ml="22px">
             <Icon as={MdNotifications} w="24px" h="24px" />
           </Center>
         </NavLink>
         <NavLink
-          to="/login"
+          to="/profile"
           activeStyle={{
             color: 'white',
             textDecoration: 'none',

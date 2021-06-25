@@ -13,8 +13,8 @@ import {
   Wrap,
   Flex,
   Avatar,
-  Link,
 } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
 
 import {
   MdMenu,
@@ -52,47 +52,97 @@ export function BurgerMenu(props: Props) {
               w="260px"
               borderBottom="1px solid rgba(255, 255, 255, 0.1)"
             >
-              <Wrap>
-                <WrapItem>
-                  <Avatar
-                    m="12px"
-                    name="Dhaval Mulashiya"
-                    src="https://bit.ly/tioluwani-kolawole"
-                  />
-                </WrapItem>
-              </Wrap>
+              <Flex>
+                <Wrap>
+                  <WrapItem>
+                    <Avatar
+                      m="12px"
+                      name="Dhaval Mulashiya"
+                      src="https://bit.ly/tioluwani-kolawole"
+                    />
+                  </WrapItem>
+                </Wrap>
+              </Flex>
             </Box>
             <Box h="40px" mt="15px">
-              <Link>Explore More</Link>
+              <NavLink to="/profile">Explore More</NavLink>
             </Box>
-            <Link>
+            <NavLink
+              to="/homepage"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText name={'home'} iconName={MdHome} />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to="/explore"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText name={'Explore'} iconName={MdExplore} />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to="/All_Transactions"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText name={'Wallet'} iconName={MdAccountBalanceWallet} />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to="/bookmark"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText name={'Bookmarks'} iconName={MdBookmark} />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to="/writing"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText
                 name={'Start Writing'}
                 iconName={HiOutlinePencilAlt}
               />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to="/analysis"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText name={'Analysis'} iconName={IoAnalyticsSharp} />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to="/reports"
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <IconWithText
                 name={'Reports'}
                 iconName={HiOutlineDocumentReport}
               />
-            </Link>
-            <Link>
+            </NavLink>
+            <NavLink
+              to=""
+              activeStyle={{
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
               <Flex mt="13px">
                 <Icon
                   as={IoMdLogOut}
@@ -109,7 +159,7 @@ export function BurgerMenu(props: Props) {
                   Log out
                 </Box>
               </Flex>
-            </Link>
+            </NavLink>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

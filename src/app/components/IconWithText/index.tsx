@@ -10,7 +10,7 @@ export interface Props {
 export const IconWithText: React.FC<Props> = ({ name, iconName, ...rest }) => {
   return (
     <Flex mt="13px">
-      <Icon as={iconName} h="28px" w="28px" />
+      <Icon as={iconName} h="28px" w="28px" color="white" />
       <Box
         h="40px"
         w="100%"
