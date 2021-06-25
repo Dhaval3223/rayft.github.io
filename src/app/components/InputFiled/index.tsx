@@ -38,11 +38,9 @@
          variant="flushed"
          type={text}
          size="lg"
-         required
          fontWeight="bold"
          value={value}
          onChange={onchng}
-         isRequired
          // isInvalid
        />
      </div>

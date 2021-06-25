@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components/macro';
 import { P } from './P';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 export function NotFoundPage() {
   return (
@@ -19,6 +20,7 @@ export function NotFoundPage() {
           4
         </Title>
         <P>Page not found.</P>
+        <Link to="/">Please try to login</Link>
       </Wrapper>
     </>
   );

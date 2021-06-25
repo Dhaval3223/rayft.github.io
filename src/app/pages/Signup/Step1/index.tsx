@@ -23,7 +23,8 @@
    FormControl,
    InputGroup,
    Input,
-   VStack
+   VStack,
+   useToast
  } from '@chakra-ui/react';
  import { PageButton } from '../../../components/PageButton/index';
  import { Title } from '../../../components/Title/index';
@@ -32,6 +33,7 @@
   useSingupSlice,
 } from './slice/index';
 import { FormsHeader } from '../../../components/FormsHeader/index';
+import {useHistory} from 'react-router-dom';
 
  interface Props {}
  
@@ -39,6 +41,7 @@ import { FormsHeader } from '../../../components/FormsHeader/index';
   const { errors } = useSelector(
     (state: RootState) => state?.singup || initialState,
   );
+  const toast = useToast();
    // eslint-disable-next-line @typescript-eslint/no-unused-vars
    const { t, i18n } = useTranslation();
    const [show, setShow] = React.useState(false);
@@ -48,6 +51,7 @@ import { FormsHeader } from '../../../components/FormsHeader/index';
    const [firstName, setFirstName] = React.useState('');
    const [lastName, setLastName] = React.useState('');
  
+   const history = useHistory();
    const { actions } = useSingupSlice();
    const dispatch = useDispatch();
 
@@ -73,6 +77,17 @@ import { FormsHeader } from '../../../components/FormsHeader/index';
     dispatch(actions.LastName(lastName));
    }
    const handleSubmit = () =>{
+     if(firstName && lastName && pass && email)
+     {
+      toast({
+        position:"top-right",
+        title: "Account Created Successfully",
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      })
+      history.push('/loginpage');
+     }
     dispatch(actions.validateForm());
    }
    return (

@@ -11,6 +11,7 @@ import { Header } from '../Header/index';
 export function AuthorTrending() {
   return (
     <>
+    <Header/>
       <Profile>
         <Image src={group} px={2}/>
         <ProfileContent>

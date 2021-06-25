@@ -58,9 +58,11 @@ const slice = createSlice({
         : 'min 8 letter password, with at least a symbol, upper and lower case letters and a number';
     },
     FirstName: (state, action: PayloadAction<string>) => {
+      state.errors.firstname="";
       state.firstname = action.payload;
     },
     LastName: (state, action: PayloadAction<string>) => {
+      state.errors.lastname="";
       state.lastname = action.payload;
     },
   },

@@ -49,13 +49,13 @@ export function App() {
       {!isLogin ? (
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/loginpage" component={LoginPage} />
-          <Route component={NotFoundPage} />
+          <Route exact path="/loginpage" component={LoginPage} />          
           <Route exact path="/Sign_up/Step_1" component={Step1} />
           <Route exact path="/Sign_up/Step_2" component={Step2} />
           <Route exact path="/Sign_up/Step_3" component={Step3} />
           <Route exact path="/Sign_up/Step_2/R" component={Step_2} />
           <Route exact path="/Sign_up/Step_4" component={Step4} />
+          <Route component={NotFoundPage} />
         </Switch>
       ) : (
         <Switch>
@@ -70,6 +70,7 @@ export function App() {
           <Route exact path="/Sign_up/Step_2/R" component={Step_2} />
           <Route exact path="/Sign_up/Step_4" component={Step4} />
           <Route exact path="/loginpage" component={LoginPage} />
+          <Route exact path="/explore" component={ExplorePage}/>
           <Route component={NotFoundPage} />
         </Switch>
       )}

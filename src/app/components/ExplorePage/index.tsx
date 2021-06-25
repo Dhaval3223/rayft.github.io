@@ -33,7 +33,7 @@ export function Explore()
           });
       }, []);
     return(
-        <Tabs py="12">
+        <Tabs py="2">
             <TabList color="teal" justifyContent="center" alignItems="center">
                 <Tab fontWeight="bold">Trending</Tab>
                 <Tab fontWeight="bold">Rayft Choice</Tab>

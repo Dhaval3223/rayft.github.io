@@ -33,13 +33,9 @@ const slice = createSlice({
       {
         state.errors.email="This Field is Required";
       }
-      else if(!state.password)
+      if(!state.password)
       {
         state.errors.password="This Field is Required";
-      }
-      else
-      {
-          axios.post("https://private-16b8d3-rayftnew.apiary-mock.com/login");
       }
     },
     validateEmailAddress: (state, action: PayloadAction<string>) => {

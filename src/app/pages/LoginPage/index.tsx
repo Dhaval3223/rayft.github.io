@@ -9,6 +9,7 @@ import styled from 'styled-components/macro';
 import { useTranslation } from 'react-i18next';
 import { InputFiled } from '../../components/InputFiled/index';
 import { useHistory } from 'react-router-dom';
+import {useToast} from '@chakra-ui/react';
 
 import {
   Button,
@@ -44,6 +45,7 @@ interface Props {
 
 export const LoginPage = memo((props: Props) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const toast = useToast();
   const { t, i18n } = useTranslation();
   const { push } = useHistory();
   const [show, setShow] = React.useState(false);
@@ -116,7 +118,24 @@ export const LoginPage = memo((props: Props) => {
             password: psswrd,
           }),
         );
+        toast({
+          position:"top-right",
+          title: "Login Successfully",
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        })
         history.push('/homepage');
+      }
+      else
+      {
+        toast({
+          position:"top-right",
+          title: "Wrong email or password",
+          status: "error",
+          duration: 4000,
+          isClosable: true,
+        })
       }
     }
   };
