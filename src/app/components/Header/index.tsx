@@ -31,7 +31,10 @@ export function Header(props: Props) {
             <Inputsearch />
           </Box>
           <Spacer />
-          <Box display={['none', 'none', 'none', 'block']} mr="84px">
+          <Box
+            display={['none', 'none', 'none', 'block']}
+            mr={['0px', '0px', '0px', '0px', '84px']}
+          >
             <IconsPanel />
           </Box>
         </Flex>

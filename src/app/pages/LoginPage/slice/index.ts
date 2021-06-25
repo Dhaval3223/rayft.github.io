@@ -24,6 +24,17 @@ const slice = createSlice({
   name: 'login',
   initialState,
   reducers: {
+    Login: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+
+      state.errors.email =
+        state.email === ''
+          ? 'Username Cannot be Empty'
+          : validateEmail.test(state.email)
+          ? ''
+          : 'Email is not valid';
+      localStorage.setItem('User', state.email);
+    },
     validateEmailAddress: (state, action: PayloadAction<string>) => {
       state.email = action.payload;
 
@@ -48,7 +59,7 @@ const slice = createSlice({
   },
 });
 
-export const { validateEmailAddress, Password } = slice.actions;
+export const { validateEmailAddress, Password, Login } = slice.actions;
 
 export const useLoginSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });

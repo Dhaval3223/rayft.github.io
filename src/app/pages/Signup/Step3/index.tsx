@@ -31,6 +31,7 @@ export const Step3 = memo((props: Props) => {
         justifyContent="center"
         alignItems="center"
         mt="2em"
+        mb="5em"
         // bg={["white","#f7f8fa"]}
       >
         <Title title="Your experience…" />

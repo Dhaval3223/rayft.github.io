@@ -1,14 +1,11 @@
 import React from 'react';
-import {Image} from '@chakra-ui/react';
+import { Image } from '@chakra-ui/react';
 
-export interface Iprops{
-    minW:string,
-    minH:string,
-    src:string
+export interface Iprops {
+  src: string;
 }
-const HomePageCardImage = (props:Iprops) =>
-{
-    const {src,minW,minH} = props;
-    return <Image minH={minH} minW={minW} src={src}/>
-}
+const HomePageCardImage = (props: Iprops) => {
+  const { src } = props;
+  return <Image src={src} minW={['24em', '200px']} maxH="200px" />;
+};
 export default HomePageCardImage;

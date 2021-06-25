@@ -5,10 +5,11 @@
  */
 import React, { memo } from 'react';
 import styled from 'styled-components/macro';
-import { Stack, Box, Flex, Button, Grid, Text } from '@chakra-ui/react';
+import { Stack, Box, Flex, Button, SimpleGrid, Text } from '@chakra-ui/react';
 import { PageButton } from '../../../../components/PageButton/index';
 import { Title } from '../../../../components/Title/index';
 import { NavLink } from 'react-router-dom';
+import { FormsHeader } from '../../../../components/FormsHeader/index';
 
 interface Props {}
 
@@ -30,55 +31,48 @@ export const Step_2 = memo((props: Props) => {
   ];
   return (
     <Div>
+      <FormsHeader name="Sign Up" />
       <Flex
         flexDirection="column"
         width="100wh"
-        height={['75vh', '85vh']}
+        minH="100vh"
+        overflow="hidden"
         justifyContent="center"
         alignItems="center"
-        marginTop={['1em', '0em']}
       >
-        <Stack>
+        <Stack m="1em" mb="5em">
           <Title title="What topics are you interested in?" />
 
           <Box
             boxShadow={{
               sm: '0 2px 5px 0 rgba(0, 0, 0, 0.2);',
             }}
-            width={['300px', '716px']}
-            className="m-auto"
+            width={['fit-content', '550px', '716px']}
+            margin="auto"
             borderRadius="4px"
-            pb="2em"
           >
             <Stack
               spacing={4}
               padding={{ sm: '1em', md: '3em' }}
               className="pb-0"
               backgroundColor="whiteAlpha.900"
+              margin="auto"
             >
-              <Grid
-                templateColumns={[
-                  'repeat(2, 1fr)',
-                  'repeat(3, 1fr)',
-                  'repeat(4, 1fr)',
-                ]}
-                gap={4}
-                justifyItems="center"
-              >
+              <SimpleGrid columns={[2, 3]} spacing={5} justifyContent="center">
                 {btns.map(list => (
                   <Button
                     bg="white"
                     color="gray.300"
                     border=" 1px solid "
                     borderRadius="10em"
-                    minW="5em"
+                    minW="fit-content"
                     _hover={{ background: 'white' }}
                   >
                     {list}
                   </Button>
                 ))}
-              </Grid>
-              <Stack m="2em">
+              </SimpleGrid>
+              <Stack m="2em" pb="2em">
                 <PageButton
                   label="Next"
                   color="#20cdbb"

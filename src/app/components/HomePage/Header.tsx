@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <Container>
       <Stack>
-        <Flex my="8" mb="2">
+        <Flex my="8" mb="2" m="4em 1em 0em 1em">
           <Box>
             <HeadingText label="Hi, Fannie" as="h4" size="md" />
           </Box>
@@ -21,7 +21,7 @@ export default function Header() {
           </Box>
         </Flex>
         <Flex py="2">
-          <Box>
+          <Box ml="1em">
             <HomePageCardText
               label="You are intrested to read…"
               fontWeight="bold"

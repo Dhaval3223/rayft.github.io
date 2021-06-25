@@ -71,12 +71,24 @@ export const LoginPage = memo((props: Props) => {
   const submit = () => {
     dispatch(actions.validateEmailAddress(email));
     dispatch(actions.Password(psswrd));
-    alert('hello');
+    push('/homepage');
+
     axios
       .post(`https://private-93e935-rayft2.apiary-mock.com/login`)
       .then(res => {
-        alert('hello');
-        console.log(res.status);
+        // alert("hello")
+        console.log(res.data.data.name);
+        if (res.status === 200) {
+          console.log(res.status);
+          dispatch(actions.Login(email));
+          if (res.data.data.name === email) {
+            alert('email');
+
+            push('/homepage');
+          }
+        } else {
+          push('/loginpage');
+        }
       })
       .catch(err => {
         console.log(err);
@@ -108,7 +120,7 @@ export const LoginPage = memo((props: Props) => {
         <Flex
           flexDirection="column"
           width="100wh"
-          height={['95vh']}
+          minH={['95vh']}
           justifyContent="center"
           alignItems="center"
           // bg={["white","#f7f8fa"]}
@@ -178,7 +190,7 @@ export const LoginPage = memo((props: Props) => {
           </Stack>
         </Flex>
 
-        <Stack mt={['2em', '0em']} textAlign="center">
+        <Stack mt={['1.5em', '0em']} textAlign="center">
           <Text color="gray.300">
             Don’t have an account yet?{' '}
             <Link color="#51a8d1" fontWeight="700">

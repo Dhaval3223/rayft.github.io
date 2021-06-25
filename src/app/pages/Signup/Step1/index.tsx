@@ -34,6 +34,7 @@ export const Step1 = memo((props: Props) => {
   const { t, i18n } = useTranslation();
   const { push } = useHistory();
   const [show, setShow] = React.useState(false);
+  const [firstName, setFirstName] = React.useState('');
   const handleClick = () => setShow(!show);
 
   const submit = () => {
@@ -52,7 +53,7 @@ export const Step1 = memo((props: Props) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Stack mt="2em">
+        <Stack mt="2em" mb="5em">
           <Title title="Create an account" />
 
           <form>
@@ -77,8 +78,10 @@ export const Step1 = memo((props: Props) => {
                     <InputFiled
                       text="text"
                       label="First name"
-                      value=""
-                      onchng=""
+                      value={firstName}
+                      onchng={e => {
+                        setFirstName(e.target.value);
+                      }}
                     />
                   </InputGroup>
                   <InputGroup>

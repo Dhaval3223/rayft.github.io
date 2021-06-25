@@ -35,7 +35,7 @@ export const Step2 = memo((props: Props) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Stack>
+        <Stack mt="2em" mb="5em">
           <Title title="Tell us more about yourself" />
 
           <Box
@@ -89,7 +89,7 @@ export const Step2 = memo((props: Props) => {
                   label="Next"
                   color="#20cdbb"
                   fontcolor="white"
-                  size="10em"
+                  size="20em"
                   to={submit}
                 />
               </Stack>

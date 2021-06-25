@@ -9,7 +9,7 @@ export interface Props {
 
 export function FormsHeader(props: Props) {
   return (
-    <Box w="100%" h="44px" bg="#183380" position="fixed">
+    <Box w="100%" h="44px" bg="#183380" position="fixed" zIndex="99">
       <Flex color="white">
         <Center w={['8em', '11em']}>
           <Box m="0.8em" justifyContent={['left', 'center']}>
