@@ -1,4 +1,7 @@
-import { LoginPageState } from 'app/pages/Login/slice/types';
+import {LoginState } from "../app/pages/LoginPage/slice/types";
+import {SingupState } from "../app/pages/Signup/Step1/slice/types";
+import {BookmarkState } from "../app/components/HomePage/slice/types";
+
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -6,6 +9,9 @@ import { LoginPageState } from 'app/pages/Login/slice/types';
   You have to declare them here manually
 */
 export interface RootState {
-  loginpage?: LoginPageState;
+  //  loginpage?: LoginPage;
+  login?:LoginState,
+  singup?:SingupState,
+  bookmark?:BookmarkState,
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
